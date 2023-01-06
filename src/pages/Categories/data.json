@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "Tops",
+        "image": "https://api.lorem.space/image/fashion?w=640&h=480&r=7073"
+    },
+    {
+        "id": 2,
+        "name": "Womens-Bags",
+        "image": "https://api.lorem.space/image/watch?w=640&h=480&r=9093"
+    },
+    {
+        "id": 3,
+        "name": "Skincare",
+        "image": "https://api.lorem.space/image/furniture?w=640&h=480&r=5303"
+    },
+    {
+        "id": 4,
+        "name": "Womens-Jewellery",
+        "image": "https://api.lorem.space/image/shoes?w=640&h=480&r=4028"
+    },
+    {
+        "id": 5,
+        "name": "Sunglasses",
+        "image": "https://api.lorem.space/image?w=640&h=480&r=62"
+    }
+]
