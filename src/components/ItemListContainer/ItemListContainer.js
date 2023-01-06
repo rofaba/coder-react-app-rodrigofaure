@@ -3,13 +3,13 @@ import ItemList from "../ItemList/ItemList.js";
 import axios from 'axios'; 
 import { useParams } from "react-router-dom";
 
-import { db } from "../../";
-import { getDocs, collection, query, where } from "firebase/firestore";
+import { db } from "../../Firebase/firestore-config.js";
+import { getDocs, doc, getDoc,  collection, query, where } from "firebase/firestore";
 
 
 const ItemListContainer = (props) => {
 
-
+  const productsCollectionRef = collection(db, "productos");
 
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,8 +22,31 @@ const ItemListContainer = (props) => {
   };
 
 
-//USEEFFECT CON API
+//USEEFFECT CON FIRESTORE
+
+const getProducts = async () => {
+    const data = await getDocs(productsCollectionRef);
+    const productos = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+    console.log(productos)
+  }
+
 useEffect(() => {
+  
+
+  getProducts();
+
+  //CONSEGUIMOS LOS PRODUCTOS PARA PODER USARLOS
+
+  //----------------------------------
+
+  // const q = categoryId ? query(collection(db, "productos"), where("element.category", "==", categoryId)) : query(collection(db, "productos"), where("element.rating", ">", 4.6))
+  // getDocs(q)
+  // .then(rest =>{
+  //     const list = rest.docs.map(doc =>{
+  //         console.log(list)
+  //         .catch(err=> console.log(err)) 
+  //     });
+  //   })
 
   axios
   .get(`${callAPI}`)
@@ -59,5 +82,5 @@ useEffect(() => {
       )}
     </div>
   );
-};
+}
 export default ItemListContainer;
