@@ -13,16 +13,16 @@ const { qtycartproducts } = useContext(cartContext)
 
   return (
  
-    <div className = "flex justify-center border-2 border-solid border-b-grey-300">
+    <div className = "flex justify-around border-2 border-solid border-b-grey-300 h-36">
       <nav className="flex flex-row items-center">
         <Link to="/">
-          <div className="flex items-center">
+          <div className="flex items-center hover:scale-105 duration-300">
             <img
-              style={{ width: "160px", height: "160px" }}
-              alt="imagen de logo"
-              src={ logo }
+            className="w-36 h-32"
+            alt="imagen de logo"
+            src={ logo }
             ></img>
-            <p className="text-4xl italic text-orange-400 font-bold "> REACT STORE </p>
+            <p className="text-4xl italic text-orange-400 font-bold shadow-xl"> REACT STORE </p>
 
 
 

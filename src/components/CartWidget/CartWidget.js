@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 const CartWidget = (props) => {
   return (
     <Link to="/cart">
-      <div className="flex items-center pt-6">
+      <div className="flex items-center pt-6 hover:scale-105 duration-300">
      
         <img
-          style={{ width: "100px", height: "100px"}}
+          className="w-24 h-24 "
+          
           alt="imagen de carro"
           src={carro}
         ></img>

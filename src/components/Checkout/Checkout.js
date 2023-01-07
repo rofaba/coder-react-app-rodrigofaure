@@ -2,18 +2,19 @@ import React from "react";
 
 import { useContext, useState } from "react"
 import { Link } from "react-router-dom";
-import { useCartContext } from "../../Context/CartContext";
 
+import { cartContext } from "../../Context/CartContext";
 
 
 import { getFirestor, db } from "../../Firebase/firestore-config";
 import { doc, addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { cartContext } from "../../Context/CartContext";
+
 import EndSale from "../EndSale/EndSale";
 
 const Checkout = () => {
-  const { cartproducts, totalpagar, qtyproducts, clearCart } =
-    useContext(cartContext);
+
+  const { cartproducts, totalpagar, qtycartproducts, clearCart } = useContext(cartContext);
+
   const [idventa, setIdventa] = useState("");
 
   const [name, setName] = useState("");
@@ -57,16 +58,18 @@ const Checkout = () => {
   };
 
   return (
-    <div className="background min-h-screen py-4">
-      {idventa ? (
-        <EndSale idVenta={idventa} nombre={name} apellido={lastName} />
+    <div className="background min-h-screen py-4 bg-slate-200 ">
+      { idventa ? (
+        <EndSale idventa={idventa} name={name} lastName={lastName} />
       ) : (
-        <div className="w-full max-w-5xl  h-full min-h-full mx-auto bg-white rounded-md shadow-xl flex md:flex-row flex-col-reverse py-4 overflow-hidden">
-          <div className="md:w-1/2 bg-white rounded p-8 m-4">
+        <div className="w-full max-w-5xl  h-full min-h-full mx-auto rounded-md shadow-2xl flex md:flex-row flex-col-reverse py-4 overflow-hidden">
+          <div className="md:w-1/2 bg-slate-50 rounded p-8 m-4">
+            
             <h1 className="block w-full text-center text-gray-800 text-2xl font-bold mb-6">
               {" "}
               Datos para la compra{" "}
             </h1>
+
             <form
               onSubmit={(ev) => {
                 ev.preventDefault();
@@ -188,7 +191,7 @@ const Checkout = () => {
               </div>
             </form>
             <button
-              className="block bg-blue-500 hover:bg-blue-600 text-white text-lg mx-auto px-3 py-0.5 rounded-md disabled:bg-blue-200"
+              className="block bg-orange-300 hover:bg-orange-400 text-white text-lg mx-auto px-3 py-0.5 rounded-md disabled:bg-orange-200"
               disabled={
                 !name ||
                 !lastName ||
@@ -209,7 +212,7 @@ const Checkout = () => {
             <div className="flex flex-row items-center ">
               <p className="md:mb-2  md:py-4 md:px-6 flex-auto text-lg text-gray-600">
                 {" "}
-                Productos({qtyproducts}){" "}
+                Productos ( {qtycartproducts} ) {" "}
               </p>
               <p className="md:mb-2  md:py-4 md:px-6 flex-auto text-lg text-gray-600 text-end">
                 {" "}
