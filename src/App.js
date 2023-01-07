@@ -26,17 +26,17 @@ function App() {
           />
           <Route path="/cart" element={<Cart />} />
           <Route path="/:id" element={<ItemDetailContainer />} />
-          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          
           <Route path="/nosotros" element={<Nosotros />} />
           
           <Route path="/contacto" element={<Contact />} />
-          <Route path="/category" element={<Categories />} />
+         
           <Route
-            path="/category/:categoryId"
+            path="/category/:categoryName"
             element={<ItemListContainer gretting="CATALOGO DE PRODUCTOS" />}
           />
           <Route
-            path="/category/:categoryId/item/:id"
+            path="/category/:categoryName/item/:id"
             element={<ItemListContainer />}
           />
         </Routes>

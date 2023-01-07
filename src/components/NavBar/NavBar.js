@@ -49,6 +49,7 @@ const { qtycartproducts } = useContext(cartContext)
                   to={`/category/${category.name}`}
                 >
                   {category.name}
+                  
                 </Link>
 
               ))}
