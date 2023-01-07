@@ -209,15 +209,17 @@ const Checkout = () => {
               {" "}
               Resumen de compra{" "}
             </h1>
-            <div className="flex flex-row items-center ">
+            <div className="flex flex-col items-center ">
               <p className="md:mb-2  md:py-4 md:px-6 flex-auto text-lg text-gray-600">
                 {" "}
                 Productos ( {qtycartproducts} ) {" "}
               </p>
-              <p className="md:mb-2  md:py-4 md:px-6 flex-auto text-lg text-gray-600 text-end">
-                {" "}
-                $ {totalpagar}{" "}
-              </p>
+
+              <div className="md:mb-2  md:py-4 md:px-6 flex-auto text-gray-600 text-start">
+                {cartproducts.map((product) => (
+                <div className="flex justify-between text-base text-gray-600 py-1"> {product.qty} {product.name} </div> 
+                ))}
+              </div>
             </div>
             <div className="flex flex-row items-center mb-1">
               <p className="md:mb-2  md:py-4 md:px-6 flex-auto text-lg text-gray-600">
