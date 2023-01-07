@@ -81,10 +81,13 @@ const Cart = () => {
               </button>
 
               {/* checkout */}
+              <Link to="/checkout" >
               <button className="p-4 bg-slate-200 mx-2 disable">
                 {" "}
                 Check Out{" "}
+                
               </button>
+              </Link>
             </div>
 
             

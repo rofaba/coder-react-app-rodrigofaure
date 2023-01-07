@@ -10,7 +10,7 @@ import CustomProvider from "./Context/CartContext";
 
 import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
-
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   return (
@@ -39,6 +39,12 @@ function App() {
             path="/category/:categoryName/item/:id"
             element={<ItemListContainer />}
           />
+          <Route
+            path="/checkout"
+            element={<Checkout />}
+          />
+
+
         </Routes>
         <Footer />
       

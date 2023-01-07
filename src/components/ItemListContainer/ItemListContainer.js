@@ -11,28 +11,10 @@ const ItemListContainer = (props) => {
 
   let { categoryName } = useParams();
 
-//   const getProducts = async () => {
-//   const q = categoryName
-//   ? query(productsCollectionRef, where("category", "==", categoryName))
-//   : query(productsCollectionRef, where("rating", ">", 4.91)) 
-  
-//   console.log(categoryName);
-
-//   const querySnapshot = await getDocs(q);
-//   setProductos(
-//     querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-//   );
-//   setLoading(false);
-// };  
-
   useEffect(() => {
-    let q
-    if(categoryName) {
-      q = query(collection(db, "productos"), where("category", "==", categoryName)) 
-    }else{
-      q = query(collection(db, "productos"), where("rating", ">", 4.91))
-    }
-    console.log(categoryName)
+    let q = categoryName
+    ? query(productsCollectionRef, where("category", "==", categoryName)) 
+    : query(productsCollectionRef, where("rating", ">", 4.91))
     
     getDocs(q)
     .then(rest =>{
