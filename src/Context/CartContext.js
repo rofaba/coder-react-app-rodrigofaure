@@ -62,13 +62,23 @@ const CustomProvider = ({ children }) => {
   let memoryCart = [];
   memoryCart = cartproducts;
 
+  // actualizar cantidades desde el carro (extra)
+
   console.log(memoryCart);
 
   // clearCart();
 
   return (
     <Provider
-      value={{ cartproducts, clearCart, isInCart, addItem, removeItem, totalpagar, qtycartproducts }}
+      value={{
+        cartproducts,
+        clearCart,
+        isInCart,
+        addItem,
+        removeItem,
+        totalpagar,
+        qtycartproducts,
+      }}
     >
       {children}
     </Provider>

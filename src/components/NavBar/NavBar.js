@@ -3,7 +3,7 @@ import logo from "../../assets/img/logo.jpeg";
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-import data from "../../pages/Categories/data.json";
+import data from "../../assets/data";
 import { cartContext } from '../../Context/CartContext'
 
 
@@ -13,7 +13,7 @@ const { qtycartproducts } = useContext(cartContext)
 
   return (
  
-    <div className = "flex justify-around border-2 border-solid border-b-grey-300 h-36">
+    <div className = "flex justify-evenly border-2 border-solid border-b-grey-300 h-36">
       <nav className="flex flex-row items-center">
         <Link to="/">
           <div className="flex items-center hover:scale-105 duration-300">
@@ -22,7 +22,7 @@ const { qtycartproducts } = useContext(cartContext)
             alt="imagen de logo"
             src={ logo }
             ></img>
-            <p className="text-4xl italic text-orange-400 font-bold shadow-xl"> REACT STORE </p>
+            <p className="text-4xl italic text-orange-400 font-bold"> REACT STORE </p>
 
 
 
@@ -41,6 +41,9 @@ const { qtycartproducts } = useContext(cartContext)
               {" "}
               Categorias{" "}
             </button>
+
+            {/* // categorías dinámicas (extra) */}
+
             <div className="categorias absolute hidden peer-hover:flex hover:flex w-[130px] flex-col items-start bg-white drop-shadow-lg rounded-b-lg">
               {data.map((category) => (
                 <Link

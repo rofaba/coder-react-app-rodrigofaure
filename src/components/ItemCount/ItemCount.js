@@ -33,12 +33,12 @@ if(finishbuy === false) {
   if (disableButton === false) {
       buttonClass = "rounded-xl  text-xl p-2 w-72 m-5 bg-orange-400 text-white font-bold hover:bg-orange-500"
     } else {
-      buttonClass = "rounded-xl  text-xl p-2 w-72 m-5 bg-red-100";
+      buttonClass = "rounded-xl  text-xl p-2 w-72 m-5 bg-zinc-100";
    
   }
 
 } else {
-  buttonClass = "rounded-xl  text-white font-bold text-2xl p-2 w-72 m-5 bg-orange-400 text-white font-bold hover:bg-orange-500";
+  buttonClass = "rounded-xl  text-white font-bold text-2xl p-2 w-72 m-5 bg-orange-300 text-white font-bold hover:bg-orange-400";
   buttonContent = "Terminar Compra"
 }
 

@@ -62,8 +62,8 @@ const Checkout = () => {
       { idventa ? (
         <EndSale idventa={idventa} name={name} lastName={lastName} />
       ) : (
-        <div className="w-full max-w-5xl  h-full min-h-full mx-auto rounded-md shadow-2xl flex md:flex-row flex-col-reverse py-4 overflow-hidden">
-          <div className="md:w-1/2 bg-slate-50 rounded p-8 m-4">
+        <div className="w-full max-w-6xl  mx-auto rounded-md shadow-2xl flex flex-row py-4 overflow-hidden">
+          <div className="w-1/2 bg-slate-50 rounded p-8 m-4">
             
             <h1 className="block w-full text-center text-gray-800 text-2xl font-bold mb-6">
               {" "}
@@ -191,17 +191,12 @@ const Checkout = () => {
               </div>
             </form>
             <button
-              className="block bg-orange-300 hover:bg-orange-400 text-white text-lg mx-auto px-3 py-0.5 rounded-md disabled:bg-orange-200"
-              disabled={
-                !name ||
-                !lastName ||
-                !address ||
-                validarForm(email) !== "true" ||
-                email !== emailconf
-              }
-              onClick={endingSell}
+            className="block bg-orange-300 hover:bg-orange-400 text-white text-lg mx-auto px-3 py-0.5 rounded-md disabled:bg-orange-200"
+            disabled=
+            { !name || !lastName || !address || validarForm(email) !== "true" || email !== emailconf }
+            onClick={endingSell}
             >
-              Finalizar compra
+            Finalizar compra
             </button>
           </div>
           <div className="md:w-1/2 bg-white rounded p-8 m-4">
@@ -212,7 +207,7 @@ const Checkout = () => {
             <div className="flex flex-col items-center ">
               <p className="md:mb-2  md:py-4 md:px-6 flex-auto text-lg text-gray-600">
                 {" "}
-                Productos ( {qtycartproducts} ) {" "}
+                Cantidad de Productos ( {qtycartproducts} ) {" "}
               </p>
 
               <div className="md:mb-2  md:py-4 md:px-6 flex-auto text-gray-600 text-start">
@@ -226,18 +221,18 @@ const Checkout = () => {
                 {" "}
                 Envío{" "}
               </p>
-              <p className="md:mb-2  md:py-4 md:px-6 flex-auto text-lg text-green-600 text-end">
+              <p className="mb-2  py-4 px-6 flex-auto text-lg text-orange-400 font-bold text-end">
                 {" "}
                 Gratis{" "}
               </p>
             </div>
             <div className="flex mt-1 items-center pb-1 border-b-2 border-gray-100 mb-5"></div>
             <div className="flex flex-row items-center mb-4">
-              <p className="md:mb-2  md:py-4 md:px-6 flex-auto font-bold text-lg text-gray-600">
+              <p className="mb-2  py-4 px-6 flex-auto font-bold text-lg text-gray-600">
                 {" "}
                 Total a pagar{" "}
               </p>
-              <p className="md:mb-2  md:py-4 md:px-6 flex-auto font-bold text-lg text-gray-600 text-end">
+              <p className="mb-2 py-4 px-6 flex-auto font-bold text-lg text-gray-600 text-end">
                 {" "}
                 ${totalpagar}{" "}
               </p>

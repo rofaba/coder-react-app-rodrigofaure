@@ -23,5 +23,15 @@
         "id": 5,
         "name": "sunglasses",
         "image": "https://api.lorem.space/image?w=640&h=480&r=62"
+    },
+    {
+        "id": 6,
+        "name": "laptops",
+        "image": "https://api.lorem.space/image?w=640&h=480&r=62"
+    },
+    {
+        "id": 6,
+        "name": "mens-shoes",
+        "image": "https://api.lorem.space/image?w=640&h=480&r=62"
     }
 ]

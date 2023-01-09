@@ -21,7 +21,7 @@ const Item = (props) => {
        
         
         <Link to={`/${categoryId}`}>
-              <button className = "w-32 bg-slate-100 border-2 border-solid border-black p-1 mt-8 m-4 hover:bg-slate-300  " > Ver Detalles </button>
+              <button className = "w-32 bg-orange-300 border-2 text-white font-bold border-solid border-black p-1 mt-8 m-4 hover:bg-orange-400  " > Ver Detalles </button>
         </Link>
         
         <p> Stock Disponible: {props.stock} </p>

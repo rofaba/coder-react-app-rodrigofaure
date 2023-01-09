@@ -5,7 +5,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import Cart from "./components/Cart/Cart";
 import Nosotros from "./pages/Nosotros/Nosotros";
 import Contact from "./pages/Contact/Contact";
-import Categories from "./pages/Categories/Categories";
+
 import CustomProvider from "./Context/CartContext";
 
 import { Routes, Route } from "react-router-dom";
@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<ItemListContainer gretting="CATALOGO DE PRODUCTOS" />}
+            element={<ItemListContainer gretting="Catálogo de Productos" />}
           />
           <Route path="/cart" element={<Cart />} />
           <Route path="/:id" element={<ItemDetailContainer />} />
@@ -33,7 +33,7 @@ function App() {
          
           <Route
             path="/category/:categoryName"
-            element={<ItemListContainer gretting="CATALOGO DE PRODUCTOS" />}
+            element={<ItemListContainer gretting="Catálogo de Productos" />}
           />
           <Route
             path="/category/:categoryName/item/:id"

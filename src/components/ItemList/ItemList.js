@@ -3,7 +3,7 @@ import Item from "../Item/Item";
 const ItemList = ( { lista } ) => {
   
   return (
-    <div className="grid grid-rows-2 grid-flow-col gap-12 py-6 px-16 justify-center">
+    <div className="grid grid-cols-4 gap-12 py-6 px-16 justify-center">
       
       {/* acá falta verificar que la props productos contenga elementos */}
       

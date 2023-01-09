@@ -27,8 +27,6 @@ const onAdd = (producto, contador) => {
 
   }
 
-
-
   const stock = 5;
   const indice = 1;
   const [item, setItem] = useState({});

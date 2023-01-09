@@ -14,7 +14,7 @@ const ItemListContainer = (props) => {
   useEffect(() => {
     let q = categoryName
     ? query(productsCollectionRef, where("category", "==", categoryName)) 
-    : query(productsCollectionRef, where("rating", ">", 4.91))
+    : query(productsCollectionRef, where("rating", ">", 4.8))
     
     getDocs(q)
     .then(rest =>{
@@ -31,22 +31,22 @@ const ItemListContainer = (props) => {
    }, [categoryName]);
 
   return (
-    <div className="bg-slate-200 h-auto">
+    <div className="bg-slate-200 h-auto items-center ">
       <br></br>
-      <h1 className="text-2xl text-center">{props.gretting}</h1>
+      <h1 className="text-3xl text-center">{props.gretting}</h1>
       <br></br>
 
       {loading ? (
         <>
           <br></br>
-          <p className="text-orange-400 animate-bounce text-2xl items-center flex justify-center">
+          <p className="grid text-orange-400 animate-bounce text-2xl justify-center">
             {" "}
-            - - obteniendo productos - -{" "}
+            - - Obteniendo Productos - -{" "}
           </p>
           <br></br>
         </>
       ) : (
-        <div>
+        <div className="grid items-center justify-center">
           <ItemList lista={productos} />
         </div>
       )}

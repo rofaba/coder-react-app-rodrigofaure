@@ -8,7 +8,7 @@ const CartWidget = (props) => {
       <div className="flex items-center pt-6 hover:scale-105 duration-300">
      
         <img
-          className="w-24 h-24 "
+          className="w-20 h-20 "
           
           alt="imagen de carro"
           src={carro}
