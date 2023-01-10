@@ -63,7 +63,7 @@ const Cart = () => {
               <td>
                 {" "}
                 <button
-                  className="ml-14 p-2 text-white font-bold bg-orange-300 hover:bg-orange-400"
+                  className="ml-14 p-2 text-white font-bold bg-orange-300 rounded-md hover:bg-orange-400"
                   onClick={() => {
                     removeItem(product.id);
                   }}
@@ -82,7 +82,7 @@ const Cart = () => {
               </span>
 
               <Link to="/checkout">
-                <button className="px-6 py-2 bg-orange-300 text-white text-lg font-bold mx-1 hover:bg-orange-400">
+                <button className="px-6 py-2 bg-orange-300 text-white text-lg font-bold mx-1 rounded-md hover:bg-orange-400">
                   {" "}
                   Comprar{" "}
                 </button>

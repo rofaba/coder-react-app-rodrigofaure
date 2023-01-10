@@ -80,7 +80,7 @@ const Checkout = () => {
                 </label>
                 <input
                   className="border py-2 px-3 text-grey-800 text-left"
-                  placeholder="Escribe tu nombre"
+                  placeholder="Juan"
                   type="text"
                   name="nombre"
                   value={name}
@@ -98,7 +98,7 @@ const Checkout = () => {
                 </label>
                 <input
                   className="border py-2 px-3 text-grey-800 text-left"
-                  placeholder="Escribe tu apellido"
+                  placeholder="Pérez"
                   type="text"
                   name="apellido"
                   value={lastName}
@@ -116,7 +116,7 @@ const Checkout = () => {
                 </label>
                 <input
                   className="border py-2 px-3 text-grey-800 text-left"
-                  placeholder="tuEmail@ejemplo.com"
+                  placeholder="juanperez@mail.com"
                   type="email"
                   name="email"
                   value={email}
@@ -134,7 +134,7 @@ const Checkout = () => {
                 </label>
                 <input
                   className="border py-2 px-3 text-grey-800 text-left"
-                  placeholder="tuEmail@ejemplo.com"
+                  placeholder="juanperez@mail.com"
                   type="email"
                   name="email"
                   value={emailconf}
@@ -152,7 +152,7 @@ const Checkout = () => {
                 </label>
                 <input
                   className="border py-2 px-3 text-grey-800 text-left"
-                  placeholder="Escribe tu dirección"
+                  placeholder="Ingresa acá tu dirección de despacho"
                   type="text"
                   name="direccion"
                   value={address}
@@ -175,15 +175,15 @@ const Checkout = () => {
                 >
                   <option name="mediopago" value="tc">
                     {" "}
-                    Tarjeta Crédito{" "}
+                    Tarjeta de Crédito{" "}
                   </option>
                   <option name="mediopago" value="td">
                     {" "}
-                    Tarjeta Débito{" "}
+                    Tarjeta de Débito{" "}
                   </option>
                   <option name="mediopago" value="mp">
                     {" "}
-                    Mercado Pago{" "}
+                    MercadoPago{" "}
                   </option>
                 </select>
               </div>

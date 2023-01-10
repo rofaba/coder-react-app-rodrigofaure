@@ -31,14 +31,14 @@ if(finishbuy === false) {
   contador === 0 || contador > stock ? (disableButton = true) : (disableButton = false);
 
   if (disableButton === false) {
-      buttonClass = "rounded-xl  text-xl p-2 w-72 m-5 bg-orange-300 text-white font-bold hover:bg-orange-400"
+      buttonClass = "rounded-md text-xl p-2 w-72 m-5 bg-orange-300 text-white font-bold hover:bg-orange-400"
     } else {
-      buttonClass = "rounded-xl  text-xl p-2 w-72 m-5 bg-zinc-100";
+      buttonClass = "rounded-md  text-xl p-2 w-72 m-5 bg-zinc-100";
    
   }
 
 } else {
-  buttonClass = "rounded-xl  text-white font-bold text-2xl p-2 w-72 m-5 bg-orange-300 text-white font-bold hover:bg-orange-400";
+  buttonClass = "rounded-xl text-white font-bold text-2xl p-2 w-72 m-5 bg-orange-300 text-white font-bold hover:bg-orange-400";
   buttonContent = "Terminar Compra"
 }
 
