@@ -1,10 +1,9 @@
 import React from "react";
 
-import { useContext, useState } from "react"
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { cartContext } from "../../Context/CartContext";
-
 
 import { getFirestor, db } from "../../Firebase/firestore-config";
 import { doc, addDoc, collection, serverTimestamp } from "firebase/firestore";
@@ -12,8 +11,8 @@ import { doc, addDoc, collection, serverTimestamp } from "firebase/firestore";
 import EndSale from "../EndSale/EndSale";
 
 const Checkout = () => {
-
-  const { cartproducts, totalpagar, qtycartproducts, clearCart } = useContext(cartContext);
+  const { cartproducts, totalpagar, qtycartproducts, clearCart } =
+    useContext(cartContext);
 
   const [idventa, setIdventa] = useState("");
 
@@ -59,12 +58,11 @@ const Checkout = () => {
 
   return (
     <div className="background min-h-screen py-4 bg-slate-200 ">
-      { idventa ? (
+      {idventa ? (
         <EndSale idventa={idventa} name={name} lastName={lastName} />
       ) : (
         <div className="w-full max-w-6xl  mx-auto rounded-md shadow-2xl flex flex-row py-4 overflow-hidden">
           <div className="w-1/2 bg-slate-50 rounded p-8 m-4">
-            
             <h1 className="block w-full text-center text-gray-800 text-2xl font-bold mb-6">
               {" "}
               Datos para la compra{" "}
@@ -191,12 +189,17 @@ const Checkout = () => {
               </div>
             </form>
             <button
-            className="block bg-orange-300 hover:bg-orange-400 text-white text-lg mx-auto px-3 py-0.5 rounded-md disabled:bg-orange-200"
-            disabled=
-            { !name || !lastName || !address || validarForm(email) !== "true" || email !== emailconf }
-            onClick={endingSell}
+              className="block bg-orange-300 hover:bg-orange-400 text-white text-lg mx-auto px-3 py-0.5 rounded-md disabled:bg-orange-200"
+              disabled={
+                !name ||
+                !lastName ||
+                !address ||
+                validarForm(email) !== "true" ||
+                email !== emailconf
+              }
+              onClick={endingSell}
             >
-            Finalizar compra
+              Finalizar compra
             </button>
           </div>
           <div className="md:w-1/2 bg-white rounded p-8 m-4">
@@ -207,12 +210,15 @@ const Checkout = () => {
             <div className="flex flex-col items-center ">
               <p className="md:mb-2  md:py-4 md:px-6 flex-auto text-lg text-gray-600">
                 {" "}
-                Cantidad de Productos ( {qtycartproducts} ) {" "}
+                Cantidad de Productos ( {qtycartproducts} ){" "}
               </p>
 
               <div className="md:mb-2  md:py-4 md:px-6 flex-auto text-gray-600 text-start">
                 {cartproducts.map((product) => (
-                <div className="flex justify-between text-base text-gray-600 py-1"> {product.qty} {product.name} </div> 
+                  <div className="flex justify-between text-base text-gray-600 py-1">
+                    {" "}
+                    {product.qty} {product.name}{" "}
+                  </div>
                 ))}
               </div>
             </div>

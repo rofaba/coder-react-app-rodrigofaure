@@ -7,7 +7,7 @@ const {indice, onAdd, producto} = props;
 
 
   return (
-    <div className="detail flex justify-center items-center leading-7 w-1/3 bg-slate-300 shadow-2xl p-4 ">
+    <div className="detail flex justify-center leading-7 w-1/3 bg-slate-300 shadow-2xl p-4">
       <div className="flex flex-col w-4/5 h-4/5  bg-slate-50 p-4 rounded-lg">
          <div className="flex justify-center"><img className="border-4 p-2 w-3/6 h-3/6" src={producto.images[0]} alt="{producto.title}"/>
         </div>

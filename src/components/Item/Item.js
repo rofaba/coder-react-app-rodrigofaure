@@ -9,8 +9,8 @@ const Item = (props) => {
 
 
   return (
-    <div className="bg-white border-6 border-solid border-black p-3 shadow-2xl hover:scale-105 duration-300">
-      <div className="w-64 h-96 border-2 border-solid border-black72 p-2 rounded-lg text-center">
+    <div className="bg-white border-6  p-3 shadow-2xl hover:scale-105 duration-300">
+      <div className="w-64 h-96 border-2 p-2 rounded-lg text-center">
         {/* <h3> Id: {props.id} </h3> */}
         <h3 className="font-bold"> {props.name} </h3>
         <h3> Precio: {props.price} </h3>

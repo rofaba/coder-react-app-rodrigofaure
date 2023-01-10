@@ -33,7 +33,7 @@ const ItemListContainer = (props) => {
   return (
     <div className="bg-slate-200 h-auto items-center ">
       <br></br>
-      <h1 className="text-3xl text-center">{props.gretting}</h1>
+      <h1 className="text-3xl text-center font-semibold text-slate-600"> {props.gretting} </h1>
       <br></br>
 
       {loading ? (

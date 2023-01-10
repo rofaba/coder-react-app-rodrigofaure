@@ -1,31 +1,28 @@
-import React, {useContext} from "react";
-import logo from "../../assets/img/logo.jpeg";
+import React, { useContext } from "react";
+import logo from "../../assets/img/logo.png";
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
 import { Link } from "react-router-dom";
 import data from "../../assets/data";
-import { cartContext } from '../../Context/CartContext'
-
+import { cartContext } from "../../Context/CartContext";
 
 const NavBar = () => {
-
-const { qtycartproducts } = useContext(cartContext)
+  const { qtycartproducts } = useContext(cartContext);
 
   return (
- 
-    <div className = "flex justify-evenly border-2 border-solid border-b-grey-300 h-36">
+    <div className="flex bg-slate-600 text-slate-100 justify-center border-2 border-solid border-b-grey-300 h-36 mb-4">
       <nav className="flex flex-row items-center">
         <Link to="/">
           <div className="flex items-center hover:scale-105 duration-300">
             <img
-            className="w-36 h-32"
-            alt="imagen de logo"
-            src={ logo }
+              className="w-32 h-28 mx-4"
+              alt="imagen de logo"
+              src={logo}
             ></img>
-            <p className="text-4xl italic text-orange-400 font-bold"> REACT STORE </p>
-
-
-
+            <p className="text-4xl italic text-orange-400 font-bold tracking-wide">
+              {" "}
+              REACT STORE{" "}
+            </p>
           </div>
         </Link>
 
@@ -44,7 +41,7 @@ const { qtycartproducts } = useContext(cartContext)
 
             {/* // categorías dinámicas (extra) */}
 
-            <div className="categorias absolute hidden peer-hover:flex hover:flex w-[130px] flex-col items-start bg-white drop-shadow-lg rounded-b-lg">
+            <div className="categorias absolute capitalize text-slate-600 hidden peer-hover:flex hover:flex w-[130px] flex-col items-start bg-white drop-shadow-lg rounded-b-lg">
               {data.map((category) => (
                 <Link
                   className="px-5 py-3 py-1 text-sm font-semibold hover:text-lg hover:text-orange-400 rounded-lg"
@@ -52,16 +49,13 @@ const { qtycartproducts } = useContext(cartContext)
                   to={`/category/${category.name}`}
                 >
                   {category.name}
-                  
                 </Link>
-
               ))}
             </div>
           </div>
 
           <li></li>
 
-        
           <Link to="contacto">
             <li className="mx-10 text-2xl py-2 font-semibold hover:text-orange-400 rounded-lg ">
               {" "}
@@ -71,14 +65,12 @@ const { qtycartproducts } = useContext(cartContext)
         </ul>
       </nav>
 
-      {qtycartproducts !== 0 
-      ?
-      <CartWidget number = {qtycartproducts} />
-      :    
-      <p></p>
-      }
-</div>
-   
+      {qtycartproducts !== 0 ? (
+        <CartWidget number={qtycartproducts} />
+      ) : (
+        <p></p>
+      )}
+    </div>
   );
 };
 
