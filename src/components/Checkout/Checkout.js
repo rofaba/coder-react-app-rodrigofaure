@@ -63,7 +63,7 @@ const Checkout = () => {
       ) : (
         <div className="w-full max-w-6xl  mx-auto rounded-md shadow-2xl flex flex-row py-4 overflow-hidden">
           <div className="w-1/2 bg-slate-50 rounded p-8 m-4">
-            <h1 className="block w-full text-center text-gray-800 text-2xl font-bold mb-6">
+            <h1 className="block w-full text-center text-slate-600 text-2xl font-bold mb-6">
               {" "}
               Datos para la compra{" "}
             </h1>
@@ -74,12 +74,12 @@ const Checkout = () => {
               }}
             >
               <div className="flex flex-col mb-4">
-                <label className="mb-2 font-bold text-lg text-gray-900">
+                <label className="mb-2 font-bold text-lg text-slate-600">
                   {" "}
                   Nombre{" "}
                 </label>
                 <input
-                  className="border py-2 px-3 text-grey-800 text-left"
+                  className="border py-2 px-3 text-slate-600 text-left"
                   placeholder="Juan"
                   type="text"
                   name="nombre"
@@ -92,7 +92,7 @@ const Checkout = () => {
                 )}
               </div>
               <div className="flex flex-col mb-4">
-                <label className="mb-2 font-bold text-lg text-gray-900">
+                <label className="mb-2 font-bold text-lg text-slate-600">
                   {" "}
                   Apellido{" "}
                 </label>
@@ -110,12 +110,12 @@ const Checkout = () => {
                 )}
               </div>
               <div className="flex flex-col mb-4">
-                <label className="mb-2 font-bold text-lg text-gray-900">
+                <label className="mb-2 font-bold text-lg text-slate-600">
                   {" "}
                   Email{" "}
                 </label>
                 <input
-                  className="border py-2 px-3 text-grey-800 text-left"
+                  className="border py-2 px-3 text-slate-600 text-left"
                   placeholder="juanperez@mail.com"
                   type="email"
                   name="email"
@@ -128,12 +128,12 @@ const Checkout = () => {
                 )}
               </div>
               <div className="flex flex-col mb-4">
-                <label className="mb-2 font-bold text-lg text-gray-900">
+                <label className="mb-2 font-bold text-lg text-slate-600">
                   {" "}
                   Confirmar email{" "}
                 </label>
                 <input
-                  className="border py-2 px-3 text-grey-800 text-left"
+                  className="border py-2 px-3 text-slate-600 text-left"
                   placeholder="juanperez@mail.com"
                   type="email"
                   name="email"
@@ -146,12 +146,12 @@ const Checkout = () => {
                 )}
               </div>
               <div className="flex flex-col mb-4">
-                <label className="mb-2 font-bold text-lg text-gray-900">
+                <label className="mb-2 font-bold text-lg text-slate-600">
                   {" "}
                   Dirección{" "}
                 </label>
                 <input
-                  className="border py-2 px-3 text-grey-800 text-left"
+                  className="border py-2 px-3 text-slate-600 text-left"
                   placeholder="Ingresa acá tu dirección de despacho"
                   type="text"
                   name="direccion"
@@ -164,12 +164,12 @@ const Checkout = () => {
                 )}
               </div>
               <div className="flex flex-col mb-4">
-                <label className="mb-2 font-bold text-lg text-gray-900">
+                <label className="mb-2 font-bold text-lg text-slate-600">
                   {" "}
                   Forma de pago{" "}
                 </label>
                 <select
-                  className="border py-2 px-3 text-grey-800"
+                  className="border py-2 px-3 text-slate-600"
                   value={mediopago}
                   onChange={(ev) => setMediopago(ev.target.value)}
                 >
@@ -202,20 +202,20 @@ const Checkout = () => {
               Finalizar compra
             </button>
           </div>
-          <div className="md:w-1/2 bg-white rounded p-8 m-4">
-            <h1 className="w-full text-center text-gray-800 text-2xl font-bold mb-8">
+          <div className="w-1/2 bg-white rounded p-8 m-4">
+            <h1 className="w-full text-center text-slate-600 text-2xl font-bold mb-8">
               {" "}
               Resumen de compra{" "}
             </h1>
             <div className="flex flex-col items-center ">
-              <p className="md:mb-2  md:py-4 md:px-6 flex-auto text-lg text-gray-600">
+              <p className="mb-2  py-4 px-6 flex-auto text-lg text-orange-400 font-semibold">
                 {" "}
                 Cantidad de Productos ( {qtycartproducts} ){" "}
               </p>
 
-              <div className="md:mb-2  md:py-4 md:px-6 flex-auto text-gray-600 text-start">
+              <div className="mb-2  py-4 px-6 flex-auto text-slate-600 text-start">
                 {cartproducts.map((product) => (
-                  <div className="flex justify-between text-base text-gray-600 py-1">
+                  <div className="flex justify-between text-base text-slate-600 py-1">
                     {" "}
                     {product.qty} {product.name}{" "}
                   </div>
@@ -223,7 +223,7 @@ const Checkout = () => {
               </div>
             </div>
             <div className="flex flex-row items-center mb-1">
-              <p className="md:mb-2  md:py-4 md:px-6 flex-auto text-lg text-gray-600">
+              <p className="mb-2  py-4 px-6 flex-auto text-lg text-slate-600">
                 {" "}
                 Envío{" "}
               </p>
@@ -234,13 +234,13 @@ const Checkout = () => {
             </div>
             <div className="flex mt-1 items-center pb-1 border-b-2 border-gray-100 mb-5"></div>
             <div className="flex flex-row items-center mb-4">
-              <p className="mb-2  py-4 px-6 flex-auto font-bold text-lg text-gray-600">
+              <p className="mb-2  py-4 px-6 flex-auto font-bold text-xl text-gray-600">
                 {" "}
                 Total a pagar{" "}
               </p>
-              <p className="mb-2 py-4 px-6 flex-auto font-bold text-lg text-gray-600 text-end">
+              <p className="mb-2 py-4 px-6 flex-auto font-bold text-xl text-gray-600 text-end">
                 {" "}
-                ${totalpagar}{" "}
+                <spam className="text-orange-400"> $ </spam> {totalpagar}{" "}
               </p>
             </div>
           </div>

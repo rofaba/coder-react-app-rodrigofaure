@@ -47,7 +47,7 @@ useEffect(() => {
   return (
     <>
       {loading ? (
-        <div className="h-96">
+        <div >
           <br></br>
           <p className="text-orange-400 animate-bounce text-2xl items-center flex justify-center">
             {" "}
@@ -58,13 +58,13 @@ useEffect(() => {
       ) : (
         <div>
           <ItemDetail producto={item} stock={stock} onAdd={onAdd} indice={indice}  />
-        </div>
+        
+       
+  </div>
+    
+
       )}
-      <Link to='/'>
-      <div className="flex justify-center mb-4">
-          <button className="text-center text-xl bg-zinc-200 p-4 mt-4 rounded-xl hover:text-xl hover:bg-slate-300  " > Seguir comprando </button>
-      </div>
-    </Link>
+    
     </>
   );
 };

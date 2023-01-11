@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CartWidget = (props) => {
   return (
     <Link to="/cart">
-      <div className="flex items-center pt-6 hover:scale-105 duration-300">
+      <div className="flex items-center mt-4 pt-6 hover:scale-105 duration-300">
      
         <img
           className="w-16 h-16 px-1"

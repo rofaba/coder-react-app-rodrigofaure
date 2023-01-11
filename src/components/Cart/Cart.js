@@ -32,7 +32,7 @@ const Cart = () => {
           </tr>
 
           {cartproducts.map((product) => (
-            <tr className="grid-col-3 items-center ">
+            <tr className="grid-col-3 items-center  ">
               <td className="px-16 text-slate-600 font-semibold ">
                 {product.id}{" "}
               </td>
@@ -75,18 +75,24 @@ const Cart = () => {
             </tr>
           ))}
           <div>
-            <div className=" flex justify-end my-8 py-4 px-8 bg-slate-200 items-center text-2xl text-orange-400">
-              <span className="pr-20 m-2 font-semibold">
+            <div className=" flex justify-end mt-8 py-4 px-8 bg-slate-200 items-center text-2xl text-orange-400">
+              <span className="pr-16 my-2  font-semibold">
                 {" "}
-                Total a pagar $ {totalpagar}{" "}
+                Total a pagar : $ {totalpagar}{" "}
               </span>
 
               <Link to="/checkout">
-                <button className="px-6 py-2 bg-orange-300 text-white text-lg font-bold mx-1 rounded-md hover:bg-orange-400">
+                <button className="px-6 py-2 bg-orange-300 text-white text-lg font-bold mr-12 ml-1 rounded-md hover:bg-orange-400">
                   {" "}
                   Comprar{" "}
                 </button>
               </Link>
+              <button className="px-6 py-2 bg-orange-300 text-white text-lg font-bold mr-6 ml-1 rounded-md hover:bg-orange-400" onClick={() => {
+                    clearCart();
+                  }} >
+                  {" "}
+                  Vaciar Carro{" "}
+                </button>
             </div>
           </div>
 
@@ -94,26 +100,20 @@ const Cart = () => {
 
           <div>
             <div className="flex justify-around mb-4">
-              <Link to="/checkout">
-                <button className="p-4 bg-slate-200 mx-2 disable">
-                  {" "}
-                  Check Out{" "}
-                </button>
-              </Link>
+              
+                
+             
             </div>
           </div>
         </div>
       )}
       <div className="">
         <Link to="/">
-          <div className="flex justify-center mb-4">
-            <button className="p-4 bg-slate-200"> Seguir comprando </button>
+          <div className="flex justify-end mr-24">
+            <button className=" px-6 py-2 mb-6 bg-orange-300 text-white text-lg font-bold mr-6 ml-1 rounded-md hover:bg-orange-400"> Agregar más productos </button>
           </div>
         </Link>
-        <button
-          className="p-2 bg-orange-300 text-white text-base font-bold mx-1 hover:bg-orange-400"
-          onClick={clearCart}
-        ></button>
+     
       </div>
     </div>
   );
