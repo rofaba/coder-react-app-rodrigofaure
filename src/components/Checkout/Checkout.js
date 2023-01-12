@@ -199,7 +199,7 @@ const Checkout = () => {
               }
               onClick={endingSell}
             >
-              Finalizar compra
+              Realizar compra
             </button>
           </div>
           <div className="w-1/2 bg-white rounded p-8 m-4">

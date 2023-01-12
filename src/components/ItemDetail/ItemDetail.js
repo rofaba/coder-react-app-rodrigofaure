@@ -23,7 +23,7 @@ const {indice, onAdd, producto} = props;
 
        <Link to={`/category/${producto.category}`}>
               <div className="flex justify-center mb-4">
-                <p className=" text-orange-400 text-xl pt-2 font-semibold hover:font-bold "> Volver a categoria <span className="capitalize">{producto.category} </span></p>
+                <p className=" text-orange-400 text-xl pt-2 underline  font-semibold hover:font-bold "> Volver a categoria <span className="capitalize">{producto.category} </span></p>
               
               </div>
         </Link>

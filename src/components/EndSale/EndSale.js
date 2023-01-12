@@ -21,23 +21,23 @@ const EndSale = ({ idventa, name, lastName }) => {
             Le sugerimos que guarde su número de compra para seguimiento del
             despacho.
           </p>
-          <p className="mb-1  py-4 px-6 flex-auto text-slate-600 text-lg ">
+          <p className="mb-1  py-4 flex-auto text-slate-600 text-lg ">
             {" "}
             Agradecemos su preferencia{" "}
           </p>
         </div>
         <div className="flex mt-1 items-center pb-1 border-b-2 border-gray-100 mb-5"></div>
         <div className="flex flex-row items-center mb-4">
-          <p className="mb-2  py-4 px-6 flex-auto font-bold text-lg text-slate-600">
+          <p className="mb-2  py-4 flex-auto font-bold text-lg text-slate-600 ">
             Número de Compra:{" "}
           </p>
-          <p className="mb-2  py-4 px-6 flex-auto font-bold text-lg text-slate-600 text-end">
+          <p className="mb-2 py-4 flex-auto font-bold text-xl text-slate-600 text-end">
             {idventa}
           </p>
         </div>
         <Link to={"/"}>
           <div className="flex justify-center mb-4">
-            <p className=" text-orange-400 text-2xl pt-2 font-semibold hover:font-bold ">
+            <p className=" text-orange-400 text-2xl pt-2 underline  font-semibold hover:font-bold ">
               {" "}
               Volver a la tienda{" "}
             </p>
