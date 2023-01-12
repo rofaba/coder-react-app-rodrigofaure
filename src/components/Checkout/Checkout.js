@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import { cartContext } from "../../Context/CartContext";
 
-import { getFirestor, db } from "../../Firebase/firestore-config";
+import { db } from "../../Firebase/firestore-config";
 import { doc, addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 import EndSale from "../EndSale/EndSale";
