@@ -14,10 +14,20 @@ const Cart = () => {
       </h1>
 
       {cartproducts.length === 0 ? (
-        <h2 className="text-center p-6 text-orange-400 font-bold">
-          {" "}
-          El carrito de compras no tiene productos
-        </h2>
+        <div>
+          <h2 className="text-2xl text-center text-orange-400 font-bold">
+            {" "}
+            El carrito de compras no tiene productos
+          </h2>
+          <Link to="/">
+            <div className="flex justify-center">
+              <button className="py-2 px-4 mt-16 mb-64 mx-auto bg-orange-300 text-white text-lg font-bold rounded-md hover:bg-orange-400">
+                {" "}
+                Ir a la Tienda{" "}
+              </button>
+            </div>
+          </Link>
+        </div>
       ) : (
         <div className=" gap-12 py-6 px-16 justify-center">
           <tr className=" text-xl text-orange-400 font-bold">
@@ -54,9 +64,14 @@ const Cart = () => {
                 $ {product.price}
               </td>
 
-              <td className="px-16 text-slate-600 font-semibold  flex justify-center">
-                {product.qty}
+              <td className="px-16 text-slate-600 font-semibold  flex justify-center ">
+                {/* <button className="px-6 text-2xl font-bold text-orange-400">  -  </button> */}
+
+                <span className="pt-1 text-xl"> {product.qty} </span>
+
+                {/* <button className="px-6 text-2xl font-bold text-orange-400">  +  </button> */}
               </td>
+
               <td className="px-16 text-slate-600 font-semibold text-end ">
                 $ {product.qty * product.price}
               </td>
@@ -87,34 +102,34 @@ const Cart = () => {
                   Comprar{" "}
                 </button>
               </Link>
-              <button className="px-6 py-2 bg-orange-300 text-white text-lg font-bold mr-6 ml-1 rounded-md hover:bg-orange-400" onClick={() => {
-                    clearCart();
-                  }} >
-                  {" "}
-                  Vaciar Carro{" "}
-                </button>
+              <button
+                className="px-6 py-2 bg-orange-300 text-white text-lg font-bold mr-6 ml-1 rounded-md hover:bg-orange-400"
+                onClick={() => {
+                  clearCart();
+                }}
+              >
+                {" "}
+                Vaciar Carro{" "}
+              </button>
             </div>
           </div>
 
           <br></br>
 
           <div>
-            <div className="flex justify-around mb-4">
-              
-                
-             
+            <div className="flex justify-end mr-24">
+              <Link to="/">
+                <div className="">
+                  <button className="py-2 px-4 mx-auto bg-orange-300 text-white text-lg font-bold rounded-md hover:bg-orange-400">
+                    {" "}
+                    Agregar más productos{" "}
+                  </button>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
       )}
-      <div className="">
-        <Link to="/">
-          <div className="flex justify-end mr-24">
-            <button className=" px-6 py-2 mb-6 bg-orange-300 text-white text-lg font-bold mr-6 ml-1 rounded-md hover:bg-orange-400"> Agregar más productos </button>
-          </div>
-        </Link>
-     
-      </div>
     </div>
   );
 };

@@ -58,16 +58,6 @@ const CustomProvider = ({ children }) => {
     setCartproducts([]);
   };
 
-  //persistencia para pruebas
-  let memoryCart = [];
-  memoryCart = cartproducts;
-
-  // actualizar cantidades desde el carro (extra)
-
-  console.log(memoryCart);
-
-  // clearCart();
-
   return (
     <Provider
       value={{

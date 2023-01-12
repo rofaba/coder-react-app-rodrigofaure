@@ -34,19 +34,6 @@ const ItemDetailContainer = () => {
   const {productId} = useParams();
   console.log(productId)
 
-  const getItemToShow = async () => {
-      
-        const querySnapshot = await getDocs(collection(db, "productos"));
-                          let totalproducts = []
-                          querySnapshot.forEach((doc) => {
-                          totalproducts.push({ ...doc.data(), id: doc.id });
-                          });
-                          console.log(totalproducts)
-                          let itemToShow = totalproducts.find(elem => elem.id === productId)
-                          setItem(itemToShow)
-                          console.log(item)
-  }
-
 useEffect(()=>{  
 
         const productCollectionRef = collection(db, "productos")
@@ -63,7 +50,7 @@ useEffect(()=>{
         .finally(()=>setLoading(false))
 
     },[productId])
-    
+
 return (
     <>
       {loading ? (
