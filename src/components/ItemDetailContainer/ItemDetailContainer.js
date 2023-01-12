@@ -1,53 +1,73 @@
 import { useEffect, useState, useContext } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import axios from 'axios';
-import { Link, useParams } from "react-router-dom";
-import { cartContext } from '../../Context/CartContext' 
+import { useParams } from "react-router-dom";
+import { cartContext } from "../../Context/CartContext";
+import { db } from "../../Firebase/firestore-config.js";
+import { getDoc, doc, collection, getDocs} from "firebase/firestore";
 
 //Item --------------------------------
 
-const ItemDetailContainer = (props) => {
- 
-  const { addItem } = useContext(cartContext)
-  
- 
-// contador -------------------------------------
-const onAdd = (producto, contador) => {
+const ItemDetailContainer = () => {
 
-      const itemToAdd= {
-        id: producto.id,
-        name: producto.title,
-        brand: producto.brand,
-        thumbnail: producto.thumbnail,
-        price: producto.price,
-        qty: contador,
-  }
+  const { addItem } = useContext(cartContext);
   
-  addItem(itemToAdd, contador)
+  //add cart
 
-  }
+  const onAdd = (producto, contador) => {
+    const itemToAdd = {
+      id: producto.id,
+      name: producto.title,
+      brand: producto.brand,
+      thumbnail: producto.thumbnail,
+      price: producto.price,
+      qty: contador,
+    };
+
+    addItem(itemToAdd, contador);
+  };
 
   const stock = 5;
   const indice = 1;
-  const [item, setItem] = useState({});
+  const [item, setItem] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  let {id} = useParams()
+  const {productId} = useParams();
+  console.log(productId)
 
-useEffect(() => {
-    axios
-    .get(`https://dummyjson.com/products/${id}`)
-   
-    .then((res) => setItem(res.data), Error)
-  
-    .finally(()=> setLoading(false))
+  const getItemToShow = async () => {
       
-  }, []);
+        const querySnapshot = await getDocs(collection(db, "productos"));
+                          let totalproducts = []
+                          querySnapshot.forEach((doc) => {
+                          totalproducts.push({ ...doc.data(), id: doc.id });
+                          });
+                          console.log(totalproducts)
+                          let itemToShow = totalproducts.find(elem => elem.id === productId)
+                          setItem(itemToShow)
+                          console.log(item)
+  }
 
-  return (
+useEffect(()=>{  
+
+        const productCollectionRef = collection(db, "productos")
+        const refDoc = doc(productCollectionRef, productId)      
+        getDoc(refDoc)
+        .then(rest => {
+            const item = {
+                id: rest.id,
+                ...rest.data(),
+            }
+            setItem(item)           
+        })
+        .catch(err=> console.log(err)) 
+        .finally(()=>setLoading(false))
+
+    },[productId])
+    
+return (
     <>
       {loading ? (
-        <div >
+        <div>
           <br></br>
           <p className="text-orange-400 animate-bounce text-2xl items-center flex justify-center">
             {" "}
@@ -57,14 +77,14 @@ useEffect(() => {
         </div>
       ) : (
         <div>
-          <ItemDetail producto={item} stock={stock} onAdd={onAdd} indice={indice}  />
-        
-       
-  </div>
-    
-
+          <ItemDetail
+            producto={item}
+            stock={stock}
+            onAdd={onAdd}
+            indice={indice}
+          />
+        </div>
       )}
-    
     </>
   );
 };

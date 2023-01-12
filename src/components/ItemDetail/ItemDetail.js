@@ -4,6 +4,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 
 const ItemDetail = (props) => {
+  
 const {indice, onAdd, producto} = props;
 
 

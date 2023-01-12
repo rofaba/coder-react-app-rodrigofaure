@@ -18,14 +18,18 @@ const ItemListContainer = (props) => {
     
     getDocs(q)
     .then(rest =>{
-        const toShow = rest.docs.map(doc =>{
+        const toShow = rest.docs.map(doc => {
             return {
-                id: doc.id,
-                ...doc.data(),
+              ...doc.data(),
+              id: doc.id,
             }
         })
-        setProductos(toShow)              
+        
+        setProductos(toShow)       
+        
+
     })
+    
     .catch(err=> console.log(err)) 
     .finally(()=>setLoading(false))
    }, [categoryName]);
