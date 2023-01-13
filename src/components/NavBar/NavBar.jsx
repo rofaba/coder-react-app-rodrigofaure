@@ -2,26 +2,24 @@ import React, { useContext } from "react";
 import logo from "../../assets/img/logo.png";
 import carro from "../../assets/img/shoppingCart.svg";
 import CartWidget from "../CartWidget/CartWidget";
-import "./NavBar.css";
 import { Link } from "react-router-dom";
 import data from "../../assets/data";
 import { cartContext } from "../../Context/CartContext";
-
 
 const NavBar = () => {
   const { qtycartproducts } = useContext(cartContext);
 
   return (
-    <div className="flex bg-slate-600 text-slate-100 justify-center border-2 border-solid border-b-grey-300 h-36 mb-4">
+    <div className="flex bg-slate-600 text-slate-100 justify-center h-40 mb-4">
       <nav className="flex flex-row items-center">
         <Link to="/">
           <div className="flex items-center hover:scale-105 duration-300">
             <img
-              className="w-32 h-28 mx-4"
+              className="w-32 h-28 mx-16"
               alt="imagen de logo"
               src={logo}
             ></img>
-            <p className="text-4xl italic text-orange-400 font-bold tracking-wide">
+            <p className="text-4xl text-orange-400 font-semibold tracking-wide">
               {" "}
               REACT STORE{" "}
             </p>
@@ -41,12 +39,10 @@ const NavBar = () => {
               Categorias{" "}
             </button>
 
-            {/* // categorías dinámicas (extra) */}
-
-            <div className="categorias absolute capitalize text-slate-600 hidden peer-hover:flex hover:flex w-[130px] flex-col items-start bg-white drop-shadow-lg rounded-b-lg">
+            <div className="categorias absolute capitalize text-slate-600 hidden peer-hover:flex hover:flex w-[130px] flex-col items-start bg-slate-50 drop-shadow-lg rounded-b-lg">
               {data.map((category) => (
                 <Link
-                  className="px-5 py-3 py-1 text-sm font-semibold hover:text-lg hover:text-orange-400 rounded-lg"
+                  className="text-base font-semibold px-5 py-3 py-1 hover:text-lg hover:text-orange-400 rounded-lg"
                   key={category.id}
                   to={`/category/${category.name}`}
                 >
@@ -55,8 +51,6 @@ const NavBar = () => {
               ))}
             </div>
           </div>
-
-          <li></li>
 
           <Link to="contacto">
             <li className="mx-10 text-2xl py-2 font-semibold hover:text-orange-400 rounded-lg ">
@@ -68,9 +62,13 @@ const NavBar = () => {
       </nav>
 
       <Link to="/cart">
-      <div className="flex items-center pt-8 hover:scale-105 duration-300">
-        <img className="w-16 h-16 px-1" alt="imagen de carro" src={carro}></img>
-      </div>
+        <div className="flex items-center pt-12 hover:scale-110 duration-300">
+          <img
+            className="w-16 h-16 px-1"
+            alt="imagen de carro"
+            src={carro}
+          ></img>
+        </div>
       </Link>
 
       {qtycartproducts !== 0 ? (
@@ -81,5 +79,4 @@ const NavBar = () => {
     </div>
   );
 };
-
 export default NavBar;

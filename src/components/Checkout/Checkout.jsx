@@ -1,12 +1,7 @@
-import React from "react";
-
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-
 import { cartContext } from "../../Context/CartContext";
-
 import { db } from "../../Firebase/firestore-config";
-import { doc, addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 import EndSale from "../EndSale/EndSale";
 
@@ -15,7 +10,6 @@ const Checkout = () => {
     useContext(cartContext);
 
   const [idventa, setIdventa] = useState("");
-
   const [name, setName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -42,9 +36,9 @@ const Checkout = () => {
     clearCart();
   };
 
+  //validación
   const mensajeError = "* Campo requerido";
   const mensajeErrorEmail = "* Email no valido";
-
   const validarForm = (data) => {
     if (
       /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(
@@ -57,13 +51,13 @@ const Checkout = () => {
   };
 
   return (
-    <div className="background min-h-screen py-4 bg-slate-200 ">
+    <div className="min-h-screen py-4 bg-slate-200 ">
       {idventa ? (
         <EndSale idventa={idventa} name={name} lastName={lastName} />
       ) : (
-        <div className="w-full max-w-6xl  mx-auto rounded-md shadow-2xl flex flex-row py-4 overflow-hidden">
-          <div className="w-1/2 bg-slate-50 rounded p-8 m-4">
-            <h1 className="block w-full text-center text-slate-600 text-2xl font-bold mb-6">
+        <div className="max-w-7xl mx-auto shadow-2xl flex py-4">
+          <div className="w-1/2 bg-slate-50 p-8 m-4">
+            <h1 className="block text-center text-slate-600 text-2xl font-semibold mb-6">
               {" "}
               Datos para la compra{" "}
             </h1>
@@ -74,7 +68,7 @@ const Checkout = () => {
               }}
             >
               <div className="flex flex-col mb-4">
-                <label className="mb-2 font-bold text-lg text-slate-600">
+                <label className="ml-1 mb-2 font-bold text-lg text-slate-600">
                   {" "}
                   Nombre{" "}
                 </label>
@@ -88,11 +82,11 @@ const Checkout = () => {
                   onChange={(ev) => setName(ev.target.value)}
                 />
                 {name === "" && (
-                  <p className="text-xs text-red-600 ">{mensajeError}</p>
+                  <p className="text-xs text-red-400 ">{mensajeError}</p>
                 )}
               </div>
               <div className="flex flex-col mb-4">
-                <label className="mb-2 font-bold text-lg text-slate-600">
+                <label className="ml-1 mb-2 font-bold text-lg text-slate-600">
                   {" "}
                   Apellido{" "}
                 </label>
@@ -106,11 +100,11 @@ const Checkout = () => {
                   onChange={(ev) => setLastName(ev.target.value)}
                 />
                 {lastName === "" && (
-                  <p className="text-xs text-red-600 "> {mensajeError} </p>
+                  <p className="text-xs text-red-400 "> {mensajeError} </p>
                 )}
               </div>
               <div className="flex flex-col mb-4">
-                <label className="mb-2 font-bold text-lg text-slate-600">
+                <label className="ml-1 mb-2 font-bold text-lg text-slate-600">
                   {" "}
                   Email{" "}
                 </label>
@@ -124,11 +118,11 @@ const Checkout = () => {
                   onChange={(ev) => setEmail(ev.target.value)}
                 />
                 {validarForm(email) !== "true" && (
-                  <p className="text-xs text-red-600 "> {mensajeErrorEmail} </p>
+                  <p className="text-xs text-red-400 "> {mensajeErrorEmail} </p>
                 )}
               </div>
               <div className="flex flex-col mb-4">
-                <label className="mb-2 font-bold text-lg text-slate-600">
+                <label className="ml-1 mb-2 font-bold text-lg text-slate-600">
                   {" "}
                   Confirmar email{" "}
                 </label>
@@ -142,11 +136,11 @@ const Checkout = () => {
                   onChange={(ev) => setEmailconf(ev.target.value)}
                 />
                 {(validarForm(emailconf) !== "true" || emailconf !== email) && (
-                  <p className="text-xs text-red-600 "> {mensajeErrorEmail} </p>
+                  <p className="text-xs text-red-400 "> {mensajeErrorEmail} </p>
                 )}
               </div>
               <div className="flex flex-col mb-4">
-                <label className="mb-2 font-bold text-lg text-slate-600">
+                <label className="ml-1 mb-2 font-bold text-lg text-slate-600">
                   {" "}
                   Dirección{" "}
                 </label>
@@ -160,11 +154,11 @@ const Checkout = () => {
                   onChange={(ev) => setAddress(ev.target.value)}
                 />
                 {address === "" && (
-                  <p className="text-xs text-red-600 "> {mensajeError} </p>
+                  <p className="text-xs text-red-400 "> {mensajeError} </p>
                 )}
               </div>
               <div className="flex flex-col mb-4">
-                <label className="mb-2 font-bold text-lg text-slate-600">
+                <label className="ml-1 mb-2 font-bold text-lg text-slate-600">
                   {" "}
                   Forma de pago{" "}
                 </label>
@@ -189,7 +183,7 @@ const Checkout = () => {
               </div>
             </form>
             <button
-              className="block bg-orange-300 hover:bg-orange-400 text-white text-lg mx-auto px-3 py-0.5 rounded-md disabled:bg-orange-200"
+              className="block bg-orange-300 font-semi-bold hover:bg-orange-400 text-white text-lg mx-auto py-2 px-4 my-2 rounded-md disabled:bg-orange-200"
               disabled={
                 !name ||
                 !lastName ||
@@ -203,21 +197,21 @@ const Checkout = () => {
             </button>
           </div>
           <div className="w-1/2 bg-white rounded p-8 m-4">
-            <h1 className="w-full text-center text-slate-600 text-2xl font-bold mb-8">
+            <h1 className="w-full text-center text-slate-600 text-2xl font-semibold mb-8">
               {" "}
               Resumen de compra{" "}
             </h1>
-            <div className="flex flex-col items-center ">
-              <p className="mb-2  py-4 px-6 flex-auto text-lg text-orange-400 font-semibold">
+            <div className="flex flex-col items-center">
+              <p className="mb-2 py-4 px-6 flex-auto text-xl text-orange-400 font-semibold">
                 {" "}
                 Cantidad de Productos ( {qtycartproducts} ){" "}
               </p>
 
-              <div className="mb-2  py-4 px-6 flex-auto text-slate-600 text-start">
+              <div className="mb-2 px-6 flex-col text-slate-600 text-start">
                 {cartproducts.map((product) => (
-                  <div className="flex justify-between text-base text-slate-600 py-1">
+                  <div className="flex justify-start text-lg text-slate-600 py-1">
                     {" "}
-                    {product.qty} {product.name}{" "}
+                    <span className="px-8">{product.qty}</span> {product.name}{" "}
                   </div>
                 ))}
               </div>

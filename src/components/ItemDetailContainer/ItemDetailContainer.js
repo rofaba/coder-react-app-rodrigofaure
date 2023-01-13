@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { redirect, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { cartContext } from "../../Context/CartContext";
 import { db } from "../../Firebase/firestore-config.js";
 import { getDoc, doc, collection } from "firebase/firestore";
@@ -33,13 +33,10 @@ const ItemDetailContainer = () => {
     const refDoc = doc(productCollectionRef, productId);
     getDoc(refDoc)
       .then((rest) => {
-        console.log(rest.data())
-        if(rest.data() === undefined) {
-
-        console.log("Producto no encontrado")  
-        setItem({ id: null })
-       
-        
+        //producto no encontrado
+        if (rest.data() === undefined) {
+          console.log("Producto no encontrado");
+          setItem({ id: null });
         } else {
           const item = {
             ...rest.data(),
