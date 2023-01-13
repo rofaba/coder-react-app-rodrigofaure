@@ -1,17 +1,12 @@
 import { useEffect, useState, useContext } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { useParams } from "react-router-dom";
+import { redirect, useParams } from "react-router-dom";
 import { cartContext } from "../../Context/CartContext";
 import { db } from "../../Firebase/firestore-config.js";
-import { getDoc, doc, collection, getDocs} from "firebase/firestore";
-
-//Item --------------------------------
+import { getDoc, doc, collection } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-
   const { addItem } = useContext(cartContext);
-  
-  //add cart
 
   const onAdd = (producto, contador) => {
     const itemToAdd = {
@@ -31,27 +26,34 @@ const ItemDetailContainer = () => {
   const [item, setItem] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const {productId} = useParams();
-  console.log(productId)
+  const { productId } = useParams();
 
-useEffect(()=>{  
+  useEffect(() => {
+    const productCollectionRef = collection(db, "productos");
+    const refDoc = doc(productCollectionRef, productId);
+    getDoc(refDoc)
+      .then((rest) => {
+        console.log(rest.data())
+        if(rest.data() === undefined) {
 
-        const productCollectionRef = collection(db, "productos")
-        const refDoc = doc(productCollectionRef, productId)      
-        getDoc(refDoc)
-        .then(rest => {
-            const item = {
-                id: rest.id,
-                ...rest.data(),
-            }
-            setItem(item)           
-        })
-        .catch(err=> console.log(err)) 
-        .finally(()=>setLoading(false))
+        console.log("Producto no encontrado")  
+        setItem({ id: null })
+       
+        
+        } else {
+          const item = {
+            ...rest.data(),
+            id: rest.id,
+          };
+          console.log(rest.data());
+          setItem(item);
+        }
+      })
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false));
+  }, [productId]);
 
-    },[productId])
-
-return (
+  return (
     <>
       {loading ? (
         <div>

@@ -7,7 +7,7 @@ const Contact = () => {
       <div className=" flex flex-col items-center">
       <h1 className="text-3xl text-center font-semibold text-slate-600 py-8"> Contáctanos </h1>
       <p className="text-2xl py-2 text-slate-600 max-w-prose"> ¡Hola! Estamos aquí para ayudarte con todas tus necesidades  </p>
-      <p className="text-2xl py-2 text-slate-600 max-w-prose" > Si tienes alguna pregunta o sugerencia déjanos tu correo electrónico </p>
+      <p className="text-2xl py-2 text-slate-600 max-w-prose" > Si tienes alguna pregunta o sugerencia déjanos tu nombre y correo electrónico </p>
       <p className="text-2xl py-2 text-slate-600 max-w-prose mb-8" > ¡Te contactaremos a la brevedad!</p>
       
       <ContactForm />
