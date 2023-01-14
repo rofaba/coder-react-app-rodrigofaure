@@ -57,7 +57,7 @@ const Cart = () => {
               <td className="px-12 text-slate-600 font-semibold ">
                 {product.name}{" "}
               </td>
-              <td className="px-12 text-slate-600 font-semibold ">
+              <td className="px-4 text-slate-600 font-semibold ">
                 {product.brand}{" "}
               </td>
               <td className="text-end px-12 text-slate-600 font-semibold ">
