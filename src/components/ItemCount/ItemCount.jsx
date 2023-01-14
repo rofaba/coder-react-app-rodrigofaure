@@ -34,15 +34,13 @@ const ItemCount = ({ producto, indice, stock, onAdd }) => {
       ? (disableButton = true)
       : (disableButton = false);
 
-    if (disableButton === false) {
-      buttonClass =
-        "rounded-md text-xl p-2 w-60 m-5 bg-orange-300 text-white font-bold hover:bg-orange-400";
-    } else {
-      buttonClass = "rounded-md  text-xl p-2 w-72 m-5 bg-zinc-100";
-    }
+        disableButton === false
+        ? buttonClass = "rounded-md text-xl p-2 w-60 m-5 bg-orange-300 text-white font-bold hover:bg-orange-400"
+        : buttonClass = "rounded-md  text-xl p-2 w-72 m-5 bg-zinc-100";
+    
   } else {
     buttonClass =
-      "rounded-xl text-white font-bold text-2xl p-2 w-60 m-5 bg-orange-300 text-white font-bold hover:bg-orange-400";
+      "rounded-md text-white font-bold text-2xl p-2 w-60 m-5 bg-orange-300 text-white font-bold hover:bg-orange-400";
     buttonContent = "Terminar Compra";
   }
 

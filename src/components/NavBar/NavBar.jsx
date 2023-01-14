@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import logo from "../../assets/img/logo.png";
 import carro from "../../assets/img/shoppingCart.svg";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
-import data from "../../assets/data";
+import categoriesdata from "../../assets/categoriesdata";
 import { cartContext } from "../../Context/CartContext";
 
 const NavBar = () => {
@@ -40,7 +40,7 @@ const NavBar = () => {
             </button>
 
             <div className="categorias absolute capitalize text-slate-600 hidden peer-hover:flex hover:flex w-[130px] flex-col items-start bg-slate-50 drop-shadow-lg rounded-b-lg">
-              {data.map((category) => (
+              {categoriesdata.map((category) => (
                 <Link
                   className="text-base font-semibold px-5 py-3 py-1 hover:text-lg hover:text-orange-400 rounded-lg"
                   key={category.id}

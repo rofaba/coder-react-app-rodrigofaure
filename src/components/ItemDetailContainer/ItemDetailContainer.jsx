@@ -21,7 +21,6 @@ const ItemDetailContainer = () => {
     addItem(itemToAdd, contador);
   };
 
-  const stock = 5;
   const indice = 1;
   const [item, setItem] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -36,13 +35,13 @@ const ItemDetailContainer = () => {
         //producto no encontrado
         if (rest.data() === undefined) {
           console.log("Producto no encontrado");
-          setItem({ id: null });
+          setItem({ id: null })
+          
         } else {
           const item = {
             ...rest.data(),
             id: rest.id,
           };
-          console.log(rest.data());
           setItem(item);
         }
       })
@@ -51,27 +50,26 @@ const ItemDetailContainer = () => {
   }, [productId]);
 
   return (
-    <>
+    <div className="my-8">
       {loading ? (
-        <div>
-          <br></br>
-          <p className="text-orange-400 animate-bounce text-2xl items-center flex justify-center">
+        <div >
+         
+          <p className="grid text-orange-400 animate-bounce text-2xl justify-center">
             {" "}
             - - obteniendo detalles del producto - -{" "}
           </p>
-          <br></br>
+          
         </div>
       ) : (
         <div>
           <ItemDetail
             producto={item}
-            stock={stock}
             onAdd={onAdd}
             indice={indice}
           />
         </div>
       )}
-    </>
+    </div>
   );
 };
 export default ItemDetailContainer;

@@ -1,4 +1,3 @@
-
 import Item from "../Item/Item";
 
 const ItemList = ( { lista } ) => {

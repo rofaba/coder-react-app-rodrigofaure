@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ItemList from "../ItemList/ItemList.js";
+import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { db } from "../../Firebase/firestore-config.js";
 import { getDocs, collection, query, where } from "firebase/firestore";
@@ -13,31 +13,32 @@ const ItemListContainer = (props) => {
 
   useEffect(() => {
     let q = categoryName
-    ? query(productsCollectionRef, where("category", "==", categoryName)) 
-    : query(productsCollectionRef, where("rating", ">", 4.8))
-    
-    getDocs(q)
-    .then(rest =>{
-        const toShow = rest.docs.map(doc => {
-            return {
-              ...doc.data(),
-              id: doc.id,
-            }
-        })
-        
-        setProductos(toShow)       
-        
+      ? query(productsCollectionRef, where("category", "==", categoryName))
+      : query(productsCollectionRef, where("rating", ">", 4.8));
 
-    })
-    
-    .catch(err=> console.log(err)) 
-    .finally(()=>setLoading(false))
-   }, [categoryName]);
+    getDocs(q)
+      .then((rest) => {
+        const toShow = rest.docs.map((doc) => {
+          return {
+            ...doc.data(),
+            id: doc.id,
+          };
+        });
+
+        setProductos(toShow);
+      })
+
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false));
+  }, [categoryName]);
 
   return (
     <div className="bg-slate-200 h-auto items-center ">
       <br></br>
-      <h1 className="text-3xl text-center font-semibold text-slate-600"> {props.gretting} </h1>
+      <h1 className="text-3xl text-center font-semibold text-slate-600">
+        {" "}
+        {props.gretting}{" "}
+      </h1>
       <br></br>
 
       {loading ? (
@@ -45,7 +46,7 @@ const ItemListContainer = (props) => {
           <br></br>
           <p className="grid text-orange-400 animate-bounce text-2xl justify-center">
             {" "}
-            - - Obteniendo Productos - - {" "}
+            - - Obteniendo Productos - -{" "}
           </p>
           <br></br>
         </>

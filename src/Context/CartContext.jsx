@@ -1,14 +1,14 @@
-import React, { useState, createContext, useEffect } from "react";
-
+import { useState, createContext, useEffect } from "react";
 export const cartContext = createContext();
 const { Provider } = cartContext;
 
 const CustomProvider = ({ children }) => {
+  
+  //cart states & functions
   const [cartproducts, setCartproducts] = useState([]);
   const [totalpagar, setTotalpagar] = useState(0);
   const [qtycartproducts, setQtycartproducts] = useState(0);
 
-  // manejo de cantidades dependientes de cartproducts
   const aPagar = () => {
     let subtotal = 0;
     cartproducts.forEach((element) => {
@@ -30,15 +30,12 @@ const CustomProvider = ({ children }) => {
     qtyTotal();
   }, [cartproducts]);
 
-  // funciones especìficas carrito
-
   const isInCart = (id) => {
     return cartproducts.some((item) => item.id === id);
   };
 
   const addItem = (item) => {
     if (isInCart(item.id)) {
-      console.log("producto en carro");
       let cartInProgress = [...cartproducts];
       let presentItem = cartInProgress.find((elem) => elem.id === item.id);
       presentItem.qty += item.qty;
@@ -48,12 +45,10 @@ const CustomProvider = ({ children }) => {
     }
   };
 
-  //eliminar item por Id
   const removeItem = (id) => {
     setCartproducts(cartproducts.filter((del) => del.id !== id));
   };
 
-  //Limpiar Carrito
   const clearCart = () => {
     setCartproducts([]);
   };

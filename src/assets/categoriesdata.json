@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "tops"
+  },
+  {
+    "id": 2,
+    "name": "womens-bags"
+  },
+  {
+    "id": 3,
+    "name": "skincare"
+  },
+  {
+    "id": 4,
+    "name": "womens-jewellery"
+  },
+  {
+    "id": 5,
+    "name": "sunglasses"
+  },
+  {
+    "id": 6,
+    "name": "laptops"
+  },
+  {
+    "id": 7,
+    "name": "mens-shoes"
+  },
+  {
+    "id": 8,
+    "name": "automotive"
+  }
+]
