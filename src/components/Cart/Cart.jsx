@@ -31,7 +31,6 @@ const Cart = () => {
       ) : (
         <div className="mt-12">
           <tr className="flex text-xl text-orange-400 font-bold gap-6">
-            <th className="px-10 m-4"> Codigo</th>
             <th className="px-10 m-4"> Imagen</th>
             <th className="px-10 m-4"> Nombre producto</th>
             <th className="px-10 m-4"> Fabricante</th>
@@ -43,9 +42,6 @@ const Cart = () => {
 
           {cartproducts.map((product) => (
             <tr className=" mx-auto ">
-              <td className=" ml-1 px-4 text-slate-600 font-semibold ">
-                {product.id}{" "}
-              </td>
               <td className="">
                 {" "}
                 <img
@@ -54,13 +50,13 @@ const Cart = () => {
                   alt={product.title}
                 ></img>{" "}
               </td>
-              <td className="px-12 text-slate-600 font-semibold ">
+              <td className="pl-32 text-slate-600 font-semibold ">
                 {product.name}{" "}
               </td>
               <td className="px-4 text-slate-600 font-semibold ">
                 {product.brand}{" "}
               </td>
-              <td className="text-end px-12 text-slate-600 font-semibold ">
+              <td className="text-end px-16 text-slate-600 font-semibold ">
                 $ {product.price}
               </td>
 

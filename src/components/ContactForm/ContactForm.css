@@ -1,0 +1,8 @@
+.swal-button, swal-button--confirm {
+    background-color: #fdba74;
+    
+}
+.swal-button--confirm:hover {
+    background-color: #fb923c !important;
+    
+}

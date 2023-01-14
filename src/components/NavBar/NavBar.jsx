@@ -34,15 +34,15 @@ const NavBar = () => {
             </li>
           </Link>
           <div>
-            <button className="peer px-2 py-2 font-semibold hover:text-orange-400 text-2xl rounded-lg relative">
+            <button className="peer px-2 font-semibold hover:text-orange-400 text-2xl rounded-lg relative">
               {" "}
               Categorias{" "}
             </button>
 
-            <div className="categorias absolute capitalize text-slate-600 hidden peer-hover:flex hover:flex w-[130px] flex-col items-start bg-slate-50 drop-shadow-lg rounded-b-lg">
+            <div className="categorias absolute capitalize text-slate-600 hidden peer-hover:flex hover:flex w-[140px] flex-col items-start bg-slate-50 rounded-b-lg">
               {categoriesdata.map((category) => (
                 <Link
-                  className="text-base font-semibold px-5 py-3 py-1 hover:text-lg hover:text-orange-400 rounded-lg"
+                  className="scroll-smooth text-sm font-semibold px-5 py-3 hover:text-lg hover:text-orange-400 rounded-lg"
                   key={category.id}
                   to={`/category/${category.name}`}
                 >

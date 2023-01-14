@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ItemCount = ({ producto, indice, stock, onAdd }) => {
-  console.log(producto)
+  
   const [contador, setContador] = useState(indice);
   const [finishbuy, setFinishbuy] = useState(false);
   const [hidecounter, setHidecounter] = useState("flex");

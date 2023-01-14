@@ -34,9 +34,7 @@ const ItemDetailContainer = () => {
       .then((rest) => {
         //producto no encontrado
         if (rest.data() === undefined) {
-          console.log("Producto no encontrado");
-          setItem({ id: null })
-          
+          setItem({ id: null });
         } else {
           const item = {
             ...rest.data(),
@@ -52,21 +50,15 @@ const ItemDetailContainer = () => {
   return (
     <div className="my-8">
       {loading ? (
-        <div >
-         
+        <div>
           <p className="grid text-orange-400 animate-bounce text-2xl justify-center">
             {" "}
             - - obteniendo detalles del producto - -{" "}
           </p>
-          
         </div>
       ) : (
         <div>
-          <ItemDetail
-            producto={item}
-            onAdd={onAdd}
-            indice={indice}
-          />
+          <ItemDetail producto={item} onAdd={onAdd} indice={indice} />
         </div>
       )}
     </div>
