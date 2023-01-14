@@ -226,18 +226,18 @@ const Checkout = () => {
                 Gratis{" "}
               </p>
             </div>
-            <div className="flex mt-1 items-center pb-1 border-b-2 border-gray-100 mb-5"></div>
-            <div className="flex flex-row items-center mb-4">
-              <p className="mb-2  py-4 px-6 flex-auto font-bold text-xl text-gray-600">
-                {" "}
-                Total a pagar{" "}
-              </p>
-              <p className="mb-2 py-4 px-6 flex-auto font-bold text-xl text-gray-600 text-end">
-                {" "}
-                <spam className="text-orange-400"> $ </spam> {totalpagar}{" "}
-              </p>
+              <div className="flex mt-1 items-center pb-1 border-b-2 border-gray-100 mb-5"></div>
+                <div className="flex flex-row items-center mb-4">
+                  <p className="mb-2  py-4 px-6 flex-auto font-bold text-xl text-gray-600">
+                  {" "}
+                  Total a pagar{" "}
+                  </p>
+                  <p className="mb-2 py-4 px-6 flex-auto font-bold text-xl text-gray-600 text-end">
+                  {" "}
+                  <span className="text-orange-400 text-2xl p-6"> $ </span> {totalpagar}{" "}
+                  </p>
+              </div>
             </div>
-          </div>
         </div>
       )}
     </div>
