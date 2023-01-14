@@ -28,7 +28,7 @@ const ContactForm = () => {
     };
     const emailCollectionRef = collection(db, "emails");
     await addDoc(emailCollectionRef, emaildecontacto).then(({ id }) => {
-      console.log("Datos de contacto guardados con ID: ", id);
+      console.log("datos de contacto guardados, id: ", id);
     });
     setInputName("");
     setInputEmail("");
@@ -36,17 +36,17 @@ const ContactForm = () => {
   return (
     <form className="background py-4 flex flex-col" onSubmit={handleSubmit}>
       <input
-        className="border w-64 text-slate-600 p-2 my-1 rounded-md"
+        className="border w-1/2 text-slate-600 p-2 my-1 rounded-md"
         type="text"
         placeholder="Ingresa tu nombre"
         value={inputName}
         onChange={(e) => setInputName(e.target.value)}
       />
       {inputName === "" && (
-        <span className="text-xs text-red-600 ">{mensajeError}</span>
+        <span className="text-xs text-red-400 ">{mensajeError}</span>
       )}
       <input
-        className="border w-64 text-slate-600 p-2 my-2 rounded-md"
+        className="border w-1/2 text-slate-400 p-2 my-2 rounded-md"
         type="email"
         placeholder="Ingresa tu correo electrónico"
         value={inputEmail}
@@ -57,10 +57,10 @@ const ContactForm = () => {
       )}
 
       <button
-        className="py-2 px-6 bg-orange-300 mt-4 text-white text-lg font-bold rounded-md hover:bg-orange-400"
+        className="py-2 px-6 bg-orange-300 mt-8 text-white text-lg font-bold rounded-md hover:bg-orange-400"
         type="submit"
       >
-        Guardar
+        Guardar Datos
       </button>
     </form>
   );

@@ -43,7 +43,7 @@ const ItemListContainer = (props) => {
       {loading ? (
         <>
           <br></br>
-          <p className="grid text-orange-400 animate-bounce text-3xl justify-center">
+          <p className="grid text-orange-400 animate-bounce text-2xl justify-center">
             {" "}
             - - Obteniendo Productos - - {" "}
           </p>

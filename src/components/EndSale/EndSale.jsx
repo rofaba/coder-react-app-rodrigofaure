@@ -9,7 +9,7 @@ const EndSale = ({ idventa, name, lastName }) => {
           Compra finalizada exitosamente
         </h1>
         <div className="flex flex-col items-start ">
-          <p className="text-lg text-slate-600  py-4 px-6 ">
+          <p className="text-lg text-slate-600 font-semi-bold py-4 px-6 ">
             {" "}
             Estimado(a) {name} {lastName}{" "}
           </p>
