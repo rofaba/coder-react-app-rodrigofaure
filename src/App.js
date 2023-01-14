@@ -2,6 +2,9 @@ import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+
+import NoMatch from "./components/NoMatch/NoMatch";
+
 import Cart from "./components/Cart/Cart";
 import Nosotros from "./pages/Nosotros/Nosotros";
 import Contact from "./pages/Contact/Contact";
@@ -15,8 +18,7 @@ import Checkout from "./components/Checkout/Checkout";
 function App() {
   return (
     <CustomProvider>
-    <div>
-      
+      <div>
         <NavBar />
 
         <Routes>
@@ -25,31 +27,25 @@ function App() {
             element={<ItemListContainer gretting="Catálogo de Productos" />}
           />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/:productId" element={<ItemDetailContainer />} />
-          
+          <Route path="/item/:productId" element={<ItemDetailContainer />} />
+
           <Route path="/nosotros" element={<Nosotros />} />
-          
+
           <Route path="/contacto" element={<Contact />} />
-         
+
           <Route
             path="/category/:categoryName"
             element={<ItemListContainer gretting="Catálogo de Productos" />}
           />
-          <Route
-            path="/category/:categoryName/item/:id"
-            element={<ItemListContainer />}
-          />
-          <Route
-            path="/checkout"
-            element={<Checkout />}
-          />
+         
+          <Route path="/checkout" element={<Checkout />} />
 
+          <Route path="*" element={<NoMatch />} />
+          <Route path="/category/*" element={<NoMatch />} />
 
         </Routes>
         <Footer />
-      
-    </div>
-
+      </div>
     </CustomProvider>
   );
 }

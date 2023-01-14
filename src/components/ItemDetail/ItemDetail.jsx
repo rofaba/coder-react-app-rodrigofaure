@@ -2,7 +2,7 @@ import React from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
-import noEncontrado from "../../assets/img/noEncontrado.jpeg"
+import noEncontrado from "../../assets/img/noEncontrado.png"
 
 const ItemDetail = (props) => {
   const { indice, onAdd, producto } = props;
@@ -10,9 +10,11 @@ const ItemDetail = (props) => {
   return (
     <>
       {!producto.id ? (
-        <div className="flex flex-col items-center">
+        
+        <div className="container mx-auto bg-slate-100 flex flex-col items-center">
+        
            <img
-                className="py-8"
+                className="py-8 w-96" 
                 src={noEncontrado}
                 alt="producto no encontrado"
               />

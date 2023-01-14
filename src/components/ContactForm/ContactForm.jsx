@@ -34,9 +34,9 @@ const ContactForm = () => {
     setInputEmail("");
   };
   return (
-    <form className="background py-4 flex flex-col" onSubmit={handleSubmit}>
+    <form className="background py-4 flex flex-col items-justify" onSubmit={handleSubmit}>
       <input
-        className="border w-1/2 text-slate-600 p-2 my-1 rounded-md"
+        className="border w-1/2 text-slate-600 p-2  my-1 rounded-md"
         type="text"
         placeholder="Ingresa tu nombre"
         value={inputName}

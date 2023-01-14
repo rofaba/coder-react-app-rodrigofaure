@@ -13,7 +13,7 @@ const Item = (props) => {
           <img className="w-40 h-40 rounded-sm " src={pictureURL} alt={name} />
         </div>
 
-        <Link to={`/${productId}`}>
+        <Link to={`/item/${productId}`}>
           <button className="w-36 bg-orange-300 border-2 text-white font-bold py-1 rounded-md my-4 hover:bg-orange-400  ">
             {" "}
             Ver Detalles{" "}

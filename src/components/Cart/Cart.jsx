@@ -30,7 +30,7 @@ const Cart = () => {
         </div>
       ) : (
         <div className="mt-12">
-          <tr className="flex text-xl ml-2 text-orange-400 font-bold gap-6">
+          <tr className="flex text-xl text-orange-400 font-bold gap-6">
             <th className="px-10 m-4"> Codigo</th>
             <th className="px-10 m-4"> Imagen</th>
             <th className="px-10 m-4"> Nombre producto</th>
@@ -42,7 +42,7 @@ const Cart = () => {
           </tr>
 
           {cartproducts.map((product) => (
-            <tr className=" ">
+            <tr className=" mx-auto ">
               <td className=" ml-1 px-4 text-slate-600 font-semibold ">
                 {product.id}{" "}
               </td>
@@ -60,7 +60,7 @@ const Cart = () => {
               <td className="px-12 text-slate-600 font-semibold ">
                 {product.brand}{" "}
               </td>
-              <td className="px-12 text-slate-600 font-semibold text-start ">
+              <td className="text-end px-12 text-slate-600 font-semibold ">
                 $ {product.price}
               </td>
 

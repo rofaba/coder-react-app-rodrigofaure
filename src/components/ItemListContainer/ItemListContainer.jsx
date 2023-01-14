@@ -3,16 +3,24 @@ import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { db } from "../../Firebase/firestore-config.js";
 import { getDocs, collection, query, where } from "firebase/firestore";
+import categoriesdata from "../../assets/categoriesdata.json"
 
 const ItemListContainer = (props) => {
   const productsCollectionRef = collection(db, "productos");
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
+  
 
-  let { categoryName } = useParams();
+let { categoryName } = useParams();
+
+const isInCat = (catname) => {
+      return categoriesdata.some((item) => item.name === catname);
+    };
 
   useEffect(() => {
-    let q = categoryName
+    let validateCategory = isInCat(categoryName)
+
+    let q = categoryName && validateCategory
       ? query(productsCollectionRef, where("category", "==", categoryName))
       : query(productsCollectionRef, where("rating", ">", 4.8));
 
