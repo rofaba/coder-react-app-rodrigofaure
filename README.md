@@ -4,8 +4,9 @@
   Inicializado con [Create React App](https://github.com/facebook/create-react-app)
 
 ### Comenzando 🚀
-Si quieres ejecutar la App en modo development para propósitos de desarrollo y pruebas, luego de descargar el proyecto debes instalar las dependencias necesarias con "npm i", luego podrás desplegarlo usando "npm start". <br> El paso siguiente es abrir http://localhost:3000 en el navegador para visualizarlo.
-  <br>
+Si quieres ejecutar la App en modo development para propósitos de desarrollo y pruebas, luego de descargar el proyecto debes instalar las dependencias necesarias con "npm i", luego podrás desplegarlo usando "npm start".  
+El paso siguiente es abrir http://localhost:3000 en el navegador para visualizarlo.
+  
 
 Si prefieres verlo directamente en funcionamiento y probarlo, existe un deploy completamente funcional en Vercel.  
 Solo dirígete el siguiente link:  
