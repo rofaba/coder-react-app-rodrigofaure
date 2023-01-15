@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { db } from "../../Firebase/firestore-config";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import swal from 'sweetalert';
-import './ContactForm.css'
+import swal from "sweetalert";
+import "./ContactForm.css";
 
 const ContactForm = () => {
   const [inputName, setInputName] = useState("");
@@ -31,18 +31,20 @@ const ContactForm = () => {
       email: inputEmail,
       mensaje: inputMessage,
       fecha: serverTimestamp(),
-      
     };
     const emailCollectionRef = collection(db, "emails");
     await addDoc(emailCollectionRef, emaildecontacto).then(({ id }) => {
-      swal("Datos guardados!", "Te contactaremos pronto!", "success")
+      swal("Datos guardados!", "Te contactaremos pronto!", "success");
     });
-    setInputName("")
-    setInputEmail("")
-    setInputMessage("")
+    setInputName("");
+    setInputEmail("");
+    setInputMessage("");
   };
   return (
-    <form className="background py-4 flex flex-col items-justify" onSubmit={handleSubmit}>
+    <form
+      className="background py-4 flex flex-col items-justify"
+      onSubmit={handleSubmit}
+    >
       <input
         className="border w-1/2 text-slate-600 p-2  my-1 rounded-md"
         type="text"
@@ -66,7 +68,7 @@ const ContactForm = () => {
         <span className="text-xs text-red-400 "> {mensajeErrorEmail} </span>
       )}
 
- <textarea
+      <textarea
         className="border w-1/2 text-slate-600 p-2 my-2 rounded-md"
         type="text"
         placeholder="Déjanos tu mensaje"
@@ -74,8 +76,6 @@ const ContactForm = () => {
         required
         onChange={(e) => setInputMessage(e.target.value)}
       />
-
-      
 
       <button
         className="py-2 px-6 bg-orange-300 mt-8 text-white text-lg font-bold rounded-md hover:bg-orange-400"

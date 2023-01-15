@@ -14,22 +14,26 @@ function App() {
   return (
     <CustomProvider>
       <div>
-
         <NavBar />
 
         <Routes>
-          <Route path="/" element={<ItemListContainer gretting="Catálogo de Productos" />} />
-          <Route path="/cart" element={<Cart />} /> 
+          <Route
+            path="/"
+            element={<ItemListContainer gretting="Catálogo de Productos" />}
+          />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/item/:productId" element={<ItemDetailContainer />} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/contacto" element={<Contact />} />
-          <Route path="/category/:categoryName" element={<ItemListContainer gretting="Catálogo de Productos" />} />
+          <Route
+            path="/category/:categoryName"
+            element={<ItemListContainer gretting="Catálogo de Productos" />}
+          />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
 
         <Footer />
-
       </div>
     </CustomProvider>
   );

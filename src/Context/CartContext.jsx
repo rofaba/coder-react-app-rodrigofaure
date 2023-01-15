@@ -3,7 +3,6 @@ export const cartContext = createContext();
 const { Provider } = cartContext;
 
 const CustomProvider = ({ children }) => {
-  
   //cart states & functions
   const [cartproducts, setCartproducts] = useState([]);
   const [totalpagar, setTotalpagar] = useState(0);
@@ -30,6 +29,7 @@ const CustomProvider = ({ children }) => {
     qtyTotal();
   }, [cartproducts]);
 
+  //fxs
   const isInCart = (id) => {
     return cartproducts.some((item) => item.id === id);
   };

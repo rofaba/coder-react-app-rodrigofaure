@@ -51,7 +51,7 @@ const ItemDetailContainer = () => {
     <div className="my-8">
       {loading ? (
         <div>
-          <p className="grid text-orange-400 animate-bounce text-2xl justify-center">
+          <p className="grid text-orange-400 py-20 animate-bounce text-2xl justify-center">
             {" "}
             - - obteniendo detalles del producto - -{" "}
           </p>

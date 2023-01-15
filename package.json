@@ -26,10 +26,6 @@
     
   "@testing-library/user-event": "^13.5.0",
   
-    
-  "axios": "^1.2.1",
-  
-    
   "firebase": "^9.15.0",
   
     

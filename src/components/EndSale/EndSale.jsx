@@ -21,12 +21,12 @@ const EndSale = ({ idventa, name, lastName }) => {
             Le sugerimos que guarde su número de compra para seguimiento del
             despacho.
           </p>
-          <p className= "text-lg text-slate-600 py-2 px-6 mb-12">
+          <p className="text-lg text-slate-600 py-2 px-6 mb-12">
             {" "}
             Agradecemos su preferencia{" "}
           </p>
         </div>
-       
+
         <div className="flex items-start mb-4 bg-slate-100 px-4">
           <p className="text-lg font-bold text-orange-400 mb-2 py-4">
             Número de Compra:{" "}

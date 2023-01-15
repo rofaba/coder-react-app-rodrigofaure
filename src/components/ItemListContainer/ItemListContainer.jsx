@@ -3,26 +3,26 @@ import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { db } from "../../Firebase/firestore-config.js";
 import { getDocs, collection, query, where } from "firebase/firestore";
-import categoriesdata from "../../assets/categoriesdata.json"
+import categoriesdata from "../../assets/categoriesdata.json";
 
 const ItemListContainer = (props) => {
   const productsCollectionRef = collection(db, "productos");
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
-  
 
-let { categoryName } = useParams();
+  let { categoryName } = useParams();
 
-const isInCat = (catname) => {
-      return categoriesdata.some((item) => item.name === catname);
-    };
+  const isInCat = (catname) => {
+    return categoriesdata.some((item) => item.name === catname);
+  };
 
   useEffect(() => {
-    let validateCategory = isInCat(categoryName)
+    let validateCategory = isInCat(categoryName);
 
-    let q = categoryName && validateCategory
-      ? query(productsCollectionRef, where("category", "==", categoryName))
-      : query(productsCollectionRef, where("rating", ">", 4.8));
+    let q =
+      categoryName && validateCategory
+        ? query(productsCollectionRef, where("category", "==", categoryName))
+        : query(productsCollectionRef, where("rating", ">", 4.8));
 
     getDocs(q)
       .then((rest) => {
@@ -42,21 +42,17 @@ const isInCat = (catname) => {
 
   return (
     <div className="bg-slate-200 h-auto items-center ">
-      <br></br>
-      <h1 className="text-3xl text-center font-semibold text-slate-600">
+      <h1 className="text-3xl text-center py-6 font-semibold text-slate-600">
         {" "}
         {props.gretting}{" "}
       </h1>
-      <br></br>
 
       {loading ? (
         <>
-          <br></br>
-          <p className="grid text-orange-400 animate-bounce text-2xl justify-center">
+          <p className="grid text-orange-400 py-20 animate-bounce text-2xl justify-center">
             {" "}
             - - Obteniendo Productos - -{" "}
           </p>
-          <br></br>
         </>
       ) : (
         <div className="grid items-center justify-center">
