@@ -1,17 +1,18 @@
 REACT STORE - PROYECTO FINAL CURSO REACT CODERHOUSE 
 Comisión # 34845 Prof. Diego Jofre
 
-App que simula el funcionamiento de un e-commerce departamental con múltiples productos. 
-Creado con [Create React App](https://github.com/facebook/create-react-app).
+App que simula el funcionamiento de un e-commerce departamental con múltiples productos categorizados. 
+Inicializado con [Create React App](https://github.com/facebook/create-react-app).
 
 Comenzando 🚀
-Si quieres ejecutar la App en modo development para propósitos de desarrollo y pruebas, luego de descargar el proyecto debes instalar las dependencias necesarias con "npm i", luego podrás desplegarlo usando "npm start" . EL paso siguiente es abrir http://localhost:3000 en el navegador para visualizarlo.
+Si quieres ejecutar la App en modo development para propósitos de desarrollo y pruebas, luego de descargar el proyecto debes instalar las dependencias necesarias con "npm i", luego podrás desplegarlo usando "npm start". El paso siguiente es abrir http://localhost:3000 en el navegador para visualizarlo.
 
-Si prefieres verlo directamente en funcionamiento y probarlo, dirigete al deploy disponible en: 
+Si prefieres verlo directamente en funcionamiento y probarlo, dirígete al deploy disponible en: 
 
 https://coder-react-app-rodrigofaure.vercel.app/
 
 Capturas en acción 🎬
+<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/Jvvqayouquv6pMjhC9" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/reactstore-Jvvqayouquv6pMjhC9">via GIPHY</a></p>
 
 
 El proyecto fue construido con 🛠️
@@ -19,7 +20,7 @@ El proyecto fue construido con 🛠️
 - TailwindCSS: Un marco de CSS de primera utilidad repleto de clases para construir cualquier diseño, directamente en su marcado. https://tailwindcss.com/
 - React Router: Biblioteca de enrutamiento liviana y con todas las funciones para la biblioteca React JavaScript. https://reactrouter.com/en/main
 - Cloud Firestore: Base de datos flexible y escalable para el desarrollo móvil, web y de servidor de Firebase y Google Cloud. https://firebase.google.com/docs/firestore
-- Dummyjson: Datos JSON ficticios para usarlos como placeholder en el proyectos de desarrollo o testing. https://dummyjson.com/
+- Dummyjson: Datos JSON ficticios para usarlos como placeholder en proyectos de desarrollo o testing. https://dummyjson.com/
 - React Icons: Íconos populares para proyectos de React utilizando importaciones ES6. https://react-icons.github.io/react-icons/
 - Sweet Alert: Simples y hermosos modales para todo propósito. https://sweetalert.js.org/
 - Vercel: Plataforma de “deploy” y alojamiento web que permite publicar aplicaciones web con un sistema de desarrollo e integración contínua.  https://vercel.com/
@@ -28,7 +29,4 @@ Autor ✒️
 Rodrigo Faure 
 https://github.com/rofaba
 https://www.linkedin.com/in/rodrigo-faure-46376266
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+Enero 2022
