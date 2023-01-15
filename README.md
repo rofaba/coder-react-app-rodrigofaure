@@ -12,7 +12,8 @@ Si prefieres verlo directamente en funcionamiento y probarlo, dirígete al deplo
 https://coder-react-app-rodrigofaure.vercel.app/
 
 Capturas en acción 🎬
-<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/Jvvqayouquv6pMjhC9" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/reactstore-Jvvqayouquv6pMjhC9">via GIPHY</a></p>
+https://media.giphy.com/media/Jvvqayouquv6pMjhC9/giphy.gif
+
 
 
 El proyecto fue construido con 🛠️
