@@ -1,16 +1,11 @@
-import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-
 import NoMatch from "./components/NoMatch/NoMatch";
-
 import Cart from "./components/Cart/Cart";
 import Nosotros from "./pages/Nosotros/Nosotros";
 import Contact from "./pages/Contact/Contact";
-
 import CustomProvider from "./Context/CartContext";
-
 import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Checkout from "./components/Checkout/Checkout";
