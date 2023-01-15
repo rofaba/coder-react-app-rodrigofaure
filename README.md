@@ -1,4 +1,4 @@
-REACT STORE - PROYECTO FINAL CURSO REACT CODERHOUSE 
+#H1 REACT STORE - PROYECTO FINAL CURSO REACT CODERHOUSE 
 Comisión # 34845 Prof. Diego Jofre
 
 App que simula el funcionamiento de un e-commerce departamental con múltiples productos categorizados. 
@@ -14,11 +14,12 @@ https://coder-react-app-rodrigofaure.vercel.app/
 Capturas en acción 🎬
 
 - Navegación y selección de productos: https://media.giphy.com/media/Jvvqayouquv6pMjhC9/giphy.gif
-- 
 
+- Funcionamiento carro de compras:
+https://media.giphy.com/media/cTN9JJmZc7WEcMVLCq/giphy.gif
 
-
-
+- Proceso de checkout y finalización de la compra:
+https://media.giphy.com/media/IOZ8rCFCVB6bLuu0LL/giphy.gif
 
 El proyecto fue construido con 🛠️
 - React: Una biblioteca de JavaScript para construir interfaces de usuario. https://es.reactjs.org/
