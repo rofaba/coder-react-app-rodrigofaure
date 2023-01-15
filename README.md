@@ -14,6 +14,8 @@ https://coder-react-app-rodrigofaure.vercel.app/
 Capturas en acción 🎬
 https://media.giphy.com/media/Jvvqayouquv6pMjhC9/giphy.gif
 
+https://media1.giphy.com/media/Jvvqayouquv6pMjhC9/giphy.gif
+
 
 
 El proyecto fue construido con 🛠️
