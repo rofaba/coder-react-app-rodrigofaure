@@ -9,14 +9,20 @@ Si quieres ejecutar la App en modo development para propósitos de desarrollo y 
 
 Si prefieres verlo directamente en funcionamiento y probarlo, dirigete al deploy disponible en: 
 
+https://coder-react-app-rodrigofaure.vercel.app/
+
+Capturas en acción 🎬
+
+
 El proyecto fue construido con 🛠️
 - React: Una biblioteca de JavaScript para construir interfaces de usuario. https://es.reactjs.org/
 - TailwindCSS: Un marco de CSS de primera utilidad repleto de clases para construir cualquier diseño, directamente en su marcado. https://tailwindcss.com/
 - React Router: Biblioteca de enrutamiento liviana y con todas las funciones para la biblioteca React JavaScript. https://reactrouter.com/en/main
 - Cloud Firestore: Base de datos flexible y escalable para el desarrollo móvil, web y de servidor de Firebase y Google Cloud. https://firebase.google.com/docs/firestore
+- Dummyjson: Datos JSON ficticios para usarlos como placeholder en el proyectos de desarrollo o testing. https://dummyjson.com/
 - React Icons: Íconos populares para proyectos de React utilizando importaciones ES6. https://react-icons.github.io/react-icons/
 - Sweet Alert: Simples y hermosos modales para todo propósito. https://sweetalert.js.org/
-- Dummyjson: Datos JSON ficticios para usarlos como placeholder en el proyectos de desarrollo o testing. https://dummyjson.com/
+- Vercel: Plataforma de “deploy” y alojamiento web que permite publicar aplicaciones web con un sistema de desarrollo e integración contínua.  https://vercel.com/
 
 Autor ✒️
 Rodrigo Faure 
