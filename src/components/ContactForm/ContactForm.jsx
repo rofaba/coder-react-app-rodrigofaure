@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { db } from "../../Firebase/firestore-config";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import swal from 'sweetalert';
 import './ContactForm.css'
 
@@ -25,10 +25,12 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const emaildecontacto = {
       nombre: inputName,
       email: inputEmail,
       mensaje: inputMessage,
+      fecha: serverTimestamp(),
       
     };
     const emailCollectionRef = collection(db, "emails");

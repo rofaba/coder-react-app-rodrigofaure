@@ -12,9 +12,11 @@ Si prefieres verlo directamente en funcionamiento y probarlo, dirígete al deplo
 https://coder-react-app-rodrigofaure.vercel.app/
 
 Capturas en acción 🎬
-https://media.giphy.com/media/Jvvqayouquv6pMjhC9/giphy.gif
 
-https://media1.giphy.com/media/Jvvqayouquv6pMjhC9/giphy.gif
+- Navegación y selección de productos: https://media.giphy.com/media/Jvvqayouquv6pMjhC9/giphy.gif
+- 
+
+
 
 
 

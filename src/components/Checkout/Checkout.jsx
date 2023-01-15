@@ -24,6 +24,7 @@ const Checkout = () => {
     direccion: address,
     mediopago: mediopago,
   };
+  
   const endingSell = async () => {
     const ventasCollectionRef = collection(db, "ventas");
     const venta = await addDoc(ventasCollectionRef, {
